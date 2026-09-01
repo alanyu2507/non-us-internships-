@@ -9,7 +9,7 @@ from .. import http
 from . import strip_html
 
 
-def fetch(source: dict) -> list[dict]:
+def fetch(source: dict, allowed_countries: list[str] | None = None) -> list[dict]:
     url = (
         "https://boards-api.greenhouse.io/v1/boards/"
         f"{source['board']}/jobs?content=true"

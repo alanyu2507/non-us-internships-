@@ -46,7 +46,7 @@ def _log(message: str) -> None:
     print(message, flush=True)
 
 
-def fetch_all(sources: list[dict], only: str | None) -> tuple[dict, dict, set]:
+def fetch_all(sources: list[dict], only: str | None, allowed_countries: list[str]) -> tuple[dict, dict, set]:
     """Fetch every source in sequence, isolating failures.
 
     Returns (normalized_by_slug, raw_counts, failed_slugs)."""
@@ -60,7 +60,7 @@ def fetch_all(sources: list[dict], only: str | None) -> tuple[dict, dict, set]:
         slug = source["slug"]
         adapter = get_adapter(source["ats"])
         try:
-            raw = adapter.fetch(source)
+            raw = adapter.fetch(source, allowed_countries)
             normalized[slug] = [adapter.normalize(r, source) for r in raw]
             raw_counts[slug] = len(raw)
             _log(f"  {slug}: {len(raw)} raw postings")
@@ -105,6 +105,11 @@ def main(argv: list[str] | None = None) -> int:
     prev_jobs = _read_json(JOBS_PATH, [])
     history = _read_json(HISTORY_PATH, {})
 
+    # If allowed_countries was narrowed since the last run, purge disallowed
+    # rows immediately instead of letting them age out as stale.
+    allowed = set(registry["allowed_countries"])
+    prev_jobs = [j for j in prev_jobs if j.get("country") in allowed]
+
     if args.offline:
         meta = build_meta(today, prev_jobs, set())
         INDEX_PATH.write_text(
@@ -119,7 +124,9 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     _log(f"fetching {len(registry['sources'])} sources...")
-    normalized, raw_counts, failed = fetch_all(registry["sources"], args.only)
+    normalized, raw_counts, failed = fetch_all(
+        registry["sources"], args.only, registry["allowed_countries"]
+    )
 
     current: dict[str, list[dict]] = {}
     unresolved: list[dict] = []

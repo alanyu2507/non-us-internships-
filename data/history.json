@@ -1,5 +1,20 @@
 {
-  "altera:R02688": {
+  "ciena:R030893": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "ciena:R031481": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "ciena:R031490": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "ciena:R031571": {
     "first_seen": "2026-09-01",
     "last_seen": "2026-09-01",
     "misses": 0
@@ -114,11 +129,6 @@
     "last_seen": "2026-09-01",
     "misses": 0
   },
-  "marvell:2502406": {
-    "first_seen": "2026-09-01",
-    "last_seen": "2026-09-01",
-    "misses": 0
-  },
   "marvell:2502424-1": {
     "first_seen": "2026-09-01",
     "last_seen": "2026-09-01",
@@ -139,7 +149,27 @@
     "last_seen": "2026-09-01",
     "misses": 0
   },
-  "marvell:2502472": {
+  "marvell:2604216": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "nvidia:JR2023690": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "nvidia:JR2023914": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "nvidia:JR2023920-1": {
+    "first_seen": "2026-09-01",
+    "last_seen": "2026-09-01",
+    "misses": 0
+  },
+  "nvidia:JR2024054-1": {
     "first_seen": "2026-09-01",
     "last_seen": "2026-09-01",
     "misses": 0

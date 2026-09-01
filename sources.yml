@@ -10,7 +10,7 @@
 # source after fetching a non-empty response from
 #   https://{tenant}.{dc}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs
 
-allowed_countries: [Canada, China, Hong Kong, Taiwan, Singapore, United Kingdom, Germany, Netherlands, Ireland, Israel, Japan, South Korea, Australia]
+allowed_countries: [Canada, China, Hong Kong]
 
 sources:
   - {slug: tenstorrent-university, company: Tenstorrent, ats: greenhouse, board: tenstorrentuniversity}
@@ -19,22 +19,28 @@ sources:
   - {slug: cohere, company: Cohere, ats: ashby, board: cohere}
   - {slug: huawei-canada, company: Huawei Canada, ats: recruitee, board: huaweicanada}
   - {slug: samsung-ai-toronto, company: Samsung AI Center Toronto, ats: greenhouse, board: saictoronto}
-  # Workday — both verified 2026-09-01 with non-empty /wday/cxs responses.
+  # Workday — all verified 2026-09-01 with non-empty /wday/cxs responses.
+  # Large boards are scoped server-side by location facets (see adapters/workday.py).
   - {slug: altera, company: Altera, ats: workday, tenant: altera, dc: wd1, site: Altera}
   - {slug: marvell, company: Marvell, ats: workday, tenant: marvell, dc: wd1, site: MarvellCareers}
+  - {slug: nvidia, company: NVIDIA, ats: workday, tenant: nvidia, dc: wd5, site: NVIDIAExternalCareerSite}
+  - {slug: intel, company: Intel, ats: workday, tenant: intel, dc: wd1, site: External}
+  - {slug: micron, company: Micron, ats: workday, tenant: micron, dc: wd1, site: External}
+  - {slug: analog-devices, company: Analog Devices, ats: workday, tenant: analogdevices, dc: wd1, site: External}
+  - {slug: ciena, company: Ciena, ats: workday, tenant: ciena, dc: wd5, site: Careers}
 
 # Companies with no usable public JSON endpoint — rendered as the
 # "check these manually" strip at the bottom of the page.
 watch:
   - {company: Google, url: "https://www.google.com/about/careers/applications/jobs/results/?location=Canada&employment_type=INTERN", note: "Careers portal is bespoke; Canadian SWE intern reqs open early fall"}
   - {company: Apple, url: "https://jobs.apple.com/en-us/search?team=internships-STDNT-INTRN", note: "Global portal; China hardware intern reqs post in English"}
-  - {company: NVIDIA, url: "https://jobs.nvidia.com/careers", note: "Filter to Canada / China; hardware intern reqs are mostly US"}
-  - {company: Microsoft, url: "https://careers.microsoft.com/v2/global/en/students", note: "Student portal; MSRA Stars of Tomorrow runs separately"}
+  - {company: Microsoft, url: "https://careers.microsoft.com/v2/global/en/students", note: "Careers API is gated; MSRA Stars of Tomorrow runs separately"}
+  - {company: Microsoft Research Asia, url: "https://www.microsoft.com/en-us/research/academic-program/microsoft-research-asia-stars-of-tomorrow-internship-program/", note: "Beijing/Shanghai research internships; open to overseas students"}
   - {company: Amazon, url: "https://amazon.jobs/en/teams/internships-for-students", note: "Canadian sites are SDE-only"}
   - {company: Tesla, url: "https://www.tesla.com/en_ca/careers/search/?query=intern&country=CA", note: "Markham automation-controls intern posts in fall"}
   - {company: Qualcomm, url: "https://careers.qualcomm.com/careers", note: "Canada FY reqs open Sept, close Apr-May; insist on the 4-month term"}
   - {company: AMD, url: "https://careers.amd.com/students/jobs", note: "Markham silicon co-ops; watch the Canadian-university enrollment line"}
-  - {company: Intel, url: "https://jobs.intel.com/en/search-jobs", note: "China campus internships run on a separate portal"}
+  - {company: Intel China campus, url: "https://chinacampus.jobs.intel.cn/intel/position/index?recruitmentType=INTERNSHIPRECRUITMENT", note: "Separate domestic portal; global Workday board is scraped above"}
   - {company: Cisco, url: "https://jobs.cisco.com/jobs/SearchJobs/intern", note: "Ottawa hardware intern req appears some cycles"}
-  - {company: Ciena, url: "https://careers.ciena.com", note: "Ottawa hardware co-ops post 1-2 terms ahead"}
-  - {company: Synopsys, url: "https://careers.synopsys.com/early-careers", note: "Canadian verification co-ops post Nov-Mar"}
+  - {company: Synopsys, url: "https://careers.synopsys.com/early-careers", note: "Eightfold platform, API gated; Canadian co-ops post Nov-Mar"}
+  - {company: NVIDIA China campus, url: "https://www.nvidia.cn/about-nvidia/careers/", note: "Domestic funnel runs on WeChat/Moka; global Workday board is scraped above"}

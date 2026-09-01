@@ -163,6 +163,12 @@ REGION_TO_COUNTRY = {
     "new brunswick": "Canada", "nb": "Canada",
     "newfoundland and labrador": "Canada", "nl": "Canada",
     "prince edward island": "Canada", "pe": "Canada",
+    # Chinese provinces (Workday and Recruitee often emit "City, Province")
+    "shaanxi": "China", "jiangsu": "China", "guangdong": "China",
+    "zhejiang": "China", "sichuan": "China", "hubei": "China",
+    "fujian": "China", "anhui": "China", "shandong": "China",
+    "liaoning": "China", "hebei": "China", "hunan": "China",
+    "henan": "China",
     # elsewhere
     "greater london": "United Kingdom",
     "bavaria": "Germany", "bayern": "Germany",
@@ -185,6 +191,7 @@ CITY_TO_COUNTRY = {
     # China
     "shanghai": "China", "beijing": "China", "shenzhen": "China",
     "suzhou": "China", "chengdu": "China", "xi'an": "China",
+    "xian": "China", "xi an": "China",
     "hangzhou": "China", "nanjing": "China", "wuhan": "China",
     "guangzhou": "China", "tianjin": "China",
     # Taiwan
@@ -247,19 +254,21 @@ def resolve_location(location_raw: str) -> tuple[str | None, str]:
 
     if lowered in US_PHRASES or any(t in US_PHRASES for t in tokens):
         return US, ""
-    # US indicators win outright: the board's one job is keeping US rows out.
-    for t in tokens:
-        if COUNTRY_ALIASES.get(t) == US or t in US_STATE_NAMES or t in US_CITIES:
-            return US, ""
-        # Bare two-letter state abbrevs only count when another token gives
-        # them context ("San Jose, CA") — a lone "in" or "or" is just a word.
-        if t in US_STATE_ABBREVS and len(tokens) > 1:
-            return US, ""
-
+    # An explicit country token beats every heuristic — "Costa Rica, San Jose"
+    # must not trip over the US city table. Last match wins (most specific).
     country = None
     for t in tokens:
         if t in COUNTRY_ALIASES:
             country = COUNTRY_ALIASES[t]
+    if country is None:
+        # No explicit country: US state/city indicators decide next.
+        for t in tokens:
+            if t in US_STATE_NAMES or t in US_CITIES:
+                return US, ""
+            # Bare two-letter state abbrevs only count when another token
+            # gives them context ("San Jose, CA") — a lone "on" is a word.
+            if t in US_STATE_ABBREVS and len(tokens) > 1:
+                return US, ""
     if country is None:
         for t in tokens:
             if t in REGION_TO_COUNTRY:

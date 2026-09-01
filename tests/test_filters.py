@@ -33,6 +33,9 @@ RESOLVER_CASES = [
     ("Tokyo, Japan", "Japan"),
     ("Seoul, South Korea", "South Korea"),
     ("Sydney, Australia", "Australia"),
+    ("Costa Rica, San Jose", "Costa Rica"),  # explicit country beats US city table
+    ("China, Shanghai", "China"),            # Workday's country-first ordering
+    ("Xi'an, Shaanxi, China", "China"),
     ("Austin, Texas, United States", US),
     ("Remote - US", US),
     ("Remote US", US),

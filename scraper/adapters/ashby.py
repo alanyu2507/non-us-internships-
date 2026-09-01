@@ -8,7 +8,7 @@ from __future__ import annotations
 from .. import http
 
 
-def fetch(source: dict) -> list[dict]:
+def fetch(source: dict, allowed_countries: list[str] | None = None) -> list[dict]:
     url = f"https://api.ashbyhq.com/posting-api/job-board/{source['board']}"
     data = http.get_json(url)
     return data.get("jobs", [])

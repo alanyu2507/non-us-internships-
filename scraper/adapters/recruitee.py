@@ -11,7 +11,7 @@ from .. import http
 from . import strip_html
 
 
-def fetch(source: dict) -> list[dict]:
+def fetch(source: dict, allowed_countries: list[str] | None = None) -> list[dict]:
     url = f"https://{source['board']}.recruitee.com/api/offers/"
     data = http.get_json(url)
     return data.get("offers", [])

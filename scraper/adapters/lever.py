@@ -10,7 +10,7 @@ from datetime import datetime, timezone
 from .. import http
 
 
-def fetch(source: dict) -> list[dict]:
+def fetch(source: dict, allowed_countries: list[str] | None = None) -> list[dict]:
     url = f"https://api.lever.co/v0/postings/{source['board']}?mode=json"
     data = http.get_json(url)
     if not isinstance(data, list):

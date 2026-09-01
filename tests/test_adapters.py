@@ -70,6 +70,44 @@ def test_workday():
         assert row["posted_at"] is None  # Workday only exposes relative dates
 
 
+def test_workday_location_facet_selection():
+    facets = [
+        {"facetParameter": "workerSubType", "values": [{"descriptor": "Intern (Fixed Term)", "id": "w1"}]},
+        {"facetParameter": "locationMainGroup", "values": [
+            {"descriptor": "Locations", "values": [], "facetParameter": "locations"},
+            {"descriptor": "Countries", "facetParameter": "locationHierarchy1", "values": [
+                {"descriptor": "Canada", "id": "ca1"},
+                {"descriptor": "China", "id": "cn1"},
+                {"descriptor": "United States of America", "id": "us1"},
+                {"descriptor": "Germany", "id": "de1"},
+            ]},
+        ]},
+    ]
+    param, ids = workday.select_location_facet(facets, ["Canada", "China", "Hong Kong"])
+    assert param == "locationHierarchy1"
+    assert ids == ["ca1", "cn1"]
+
+
+def test_workday_city_level_facet_fallback():
+    facets = [{"facetParameter": "locationMainGroup", "values": [
+        {"descriptor": "Locations", "facetParameter": "locations", "values": [
+            {"descriptor": "Xi'an, China", "id": "x1"},
+            {"descriptor": "Boise, ID", "id": "b1"},
+            {"descriptor": "Hiroshima - Fab 15, Japan", "id": "h1"},
+        ]},
+    ]}]
+    param, ids = workday.select_location_facet(facets, ["Canada", "China", "Hong Kong"])
+    assert param == "locations"
+    assert ids == ["x1"]
+
+
+def test_workday_no_location_facet_returns_none():
+    assert workday.select_location_facet(
+        [{"facetParameter": "timeType", "values": [{"descriptor": "Full time", "id": "t"}]}],
+        ["Canada"],
+    ) is None
+
+
 def test_workday_id_is_requisition_id():
     src = {"slug": "altera", "company": "Altera", "ats": "workday", "tenant": "altera", "dc": "wd1", "site": "Altera"}
     raw = {"title": "FPGA Design Intern", "externalPath": "/job/Toronto-ON/FPGA-Design-Intern_R01234", "locationsText": "Toronto, ON, Canada", "bulletFields": ["R01234"]}
