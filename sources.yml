@@ -1,0 +1,40 @@
+# Source registry for the Offshore Bench scraper.
+#
+# This file is parsed by scraper/registry.py, which understands only the shapes
+# used below (a deliberate constraint: the pipeline's sole dependency is
+# `requests`, so there is no PyYAML). Keep entries in flow style — one
+# `- {key: value, key: value}` per line — and quote any value containing a
+# comma. Comments and blank lines are fine anywhere.
+#
+# Workday entries carry tenant/dc/site instead of board. Only add a Workday
+# source after fetching a non-empty response from
+#   https://{tenant}.{dc}.myworkdayjobs.com/wday/cxs/{tenant}/{site}/jobs
+
+allowed_countries: [Canada, China, Hong Kong, Taiwan, Singapore, United Kingdom, Germany, Netherlands, Ireland, Israel, Japan, South Korea, Australia]
+
+sources:
+  - {slug: tenstorrent-university, company: Tenstorrent, ats: greenhouse, board: tenstorrentuniversity}
+  - {slug: waabi, company: Waabi, ats: lever, board: waabi}
+  - {slug: kepler, company: Kepler Communications, ats: lever, board: kepler}
+  - {slug: cohere, company: Cohere, ats: ashby, board: cohere}
+  - {slug: huawei-canada, company: Huawei Canada, ats: recruitee, board: huaweicanada}
+  - {slug: samsung-ai-toronto, company: Samsung AI Center Toronto, ats: greenhouse, board: saictoronto}
+  # Workday — both verified 2026-09-01 with non-empty /wday/cxs responses.
+  - {slug: altera, company: Altera, ats: workday, tenant: altera, dc: wd1, site: Altera}
+  - {slug: marvell, company: Marvell, ats: workday, tenant: marvell, dc: wd1, site: MarvellCareers}
+
+# Companies with no usable public JSON endpoint — rendered as the
+# "check these manually" strip at the bottom of the page.
+watch:
+  - {company: Google, url: "https://www.google.com/about/careers/applications/jobs/results/?location=Canada&employment_type=INTERN", note: "Careers portal is bespoke; Canadian SWE intern reqs open early fall"}
+  - {company: Apple, url: "https://jobs.apple.com/en-us/search?team=internships-STDNT-INTRN", note: "Global portal; China hardware intern reqs post in English"}
+  - {company: NVIDIA, url: "https://jobs.nvidia.com/careers", note: "Filter to Canada / China; hardware intern reqs are mostly US"}
+  - {company: Microsoft, url: "https://careers.microsoft.com/v2/global/en/students", note: "Student portal; MSRA Stars of Tomorrow runs separately"}
+  - {company: Amazon, url: "https://amazon.jobs/en/teams/internships-for-students", note: "Canadian sites are SDE-only"}
+  - {company: Tesla, url: "https://www.tesla.com/en_ca/careers/search/?query=intern&country=CA", note: "Markham automation-controls intern posts in fall"}
+  - {company: Qualcomm, url: "https://careers.qualcomm.com/careers", note: "Canada FY reqs open Sept, close Apr-May; insist on the 4-month term"}
+  - {company: AMD, url: "https://careers.amd.com/students/jobs", note: "Markham silicon co-ops; watch the Canadian-university enrollment line"}
+  - {company: Intel, url: "https://jobs.intel.com/en/search-jobs", note: "China campus internships run on a separate portal"}
+  - {company: Cisco, url: "https://jobs.cisco.com/jobs/SearchJobs/intern", note: "Ottawa hardware intern req appears some cycles"}
+  - {company: Ciena, url: "https://careers.ciena.com", note: "Ottawa hardware co-ops post 1-2 terms ahead"}
+  - {company: Synopsys, url: "https://careers.synopsys.com/early-careers", note: "Canadian verification co-ops post Nov-Mar"}

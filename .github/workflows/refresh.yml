@@ -1,0 +1,45 @@
+name: refresh
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # 05:00 UTC — midnight Toronto (EDT) / 1am (EST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: python -m scraper.main
+
+      - name: Commit if changed
+        run: |
+          git add index.html data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          read -r OPEN NEW <<< "$(python - <<'EOF'
+          import json
+          jobs = json.load(open("data/jobs.json", encoding="utf-8"))
+          print(sum(1 for j in jobs if not j["stale"]), sum(1 for j in jobs if j["is_new"] and not j["stale"]))
+          EOF
+          )"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh listings ($OPEN open, $NEW new)"
+          git push

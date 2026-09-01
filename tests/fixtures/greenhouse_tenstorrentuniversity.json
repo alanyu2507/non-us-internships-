@@ -1,0 +1,252 @@
+{
+  "jobs": [
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/4873659007",
+      "ai_disclaimer": null,
+      "ai_opt_out_request_url": "http://app7.greenhouse.io/ai_opt_out_request/job_post/4873659007/ai_opt_out",
+      "application_deadline": null,
+      "company_name": "Tenstorrent University Jobs",
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Tenstorrent is leading the industry on cutting-edge AI technology, revolutionizing performance expectations, ease of use, and cost efficiency. With AI redefining the computing paradigm, solutions must evolve to unify innovations in software models, compilers, platforms, networking, and semiconductors. Our diverse team of technologists have developed a high performance RISC-V CPU from scratch, and share a passion for AI and a deep desire to build the best AI platform possible. We value collaboration, curiosity, and a commitment to solving hard",
+      "data_compliance": [
+        {
+          "demographic_data_consent_applies": false,
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "type": "gdpr"
+        }
+      ],
+      "departments": [
+        {
+          "child_ids": [],
+          "id": 4029766007,
+          "name": "University",
+          "parent_id": null
+        }
+      ],
+      "education": "education_required",
+      "first_published": "2025-09-12T17:51:34-04:00",
+      "id": 4873659007,
+      "include_ai_disclaimer": false,
+      "internal_job_id": 4498373007,
+      "language": "en",
+      "location": {
+        "name": "Toronto, Ontario, Canada"
+      },
+      "metadata": [
+        {
+          "id": 20546174007,
+          "name": "Careers Page Tile",
+          "value": [
+            "Software"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "offices": [
+        {
+          "child_ids": [],
+          "id": 4022995007,
+          "location": "Toronto, Ontario, Canada",
+          "name": "Toronto",
+          "parent_id": 4023686007
+        }
+      ],
+      "requisition_id": "20230915",
+      "title": "AI Compiler Software Intern (PEY)",
+      "updated_at": "2026-08-26T15:55:19-04:00"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/4955926007",
+      "ai_disclaimer": null,
+      "ai_opt_out_request_url": "http://app7.greenhouse.io/ai_opt_out_request/job_post/4955926007/ai_opt_out",
+      "application_deadline": null,
+      "company_name": "Tenstorrent University Jobs",
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Tenstorrent is leading the industry on cutting-edge AI technology, revolutionizing performance expectations, ease of use, and cost efficiency. With AI redefining the computing paradigm, solutions must evolve to unify innovations in software models, compilers, platforms, networking, and semiconductors. Our diverse team of technologists have developed a high performance RISC-V CPU from scratch, and share a passion for AI and a deep desire to build the best AI platform possible. We value collaboration, curiosity, and a commitment to solving hard",
+      "data_compliance": [
+        {
+          "demographic_data_consent_applies": false,
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "type": "gdpr"
+        }
+      ],
+      "departments": [
+        {
+          "child_ids": [],
+          "id": 4029766007,
+          "name": "University",
+          "parent_id": null
+        }
+      ],
+      "education": "education_required",
+      "first_published": "2025-11-05T23:13:52-05:00",
+      "id": 4955926007,
+      "include_ai_disclaimer": false,
+      "internal_job_id": 4542994007,
+      "language": "en",
+      "location": {
+        "name": "Santa Clara, California, United States"
+      },
+      "metadata": [
+        {
+          "id": 20546174007,
+          "name": "Careers Page Tile",
+          "value": [
+            "Hardware"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "offices": [
+        {
+          "child_ids": [],
+          "id": 4022994007,
+          "location": "Santa Clara, California, United States",
+          "name": "Santa Clara",
+          "parent_id": 4023685007
+        }
+      ],
+      "requisition_id": "UNI-2025341",
+      "title": "Chiplet Security Research Intern ",
+      "updated_at": "2026-08-26T15:55:19-04:00"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/4873756007",
+      "ai_disclaimer": null,
+      "ai_opt_out_request_url": "http://app7.greenhouse.io/ai_opt_out_request/job_post/4873756007/ai_opt_out",
+      "application_deadline": null,
+      "company_name": "Tenstorrent University Jobs",
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Tenstorrent is leading the industry on cutting-edge AI technology, revolutionizing performance expectations, ease of use, and cost efficiency. With AI redefining the computing paradigm, solutions must evolve to unify innovations in software models, compilers, platforms, networking, and semiconductors. Our diverse team of technologists have developed a high performance RISC-V CPU from scratch, and share a passion for AI and a deep desire to build the best AI platform possible. We value collaboration, curiosity, and a commitment to solving hard",
+      "data_compliance": [
+        {
+          "demographic_data_consent_applies": false,
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "type": "gdpr"
+        }
+      ],
+      "departments": [
+        {
+          "child_ids": [],
+          "id": 4029766007,
+          "name": "University",
+          "parent_id": null
+        }
+      ],
+      "education": "education_required",
+      "first_published": "2025-09-12T17:53:58-04:00",
+      "id": 4873756007,
+      "include_ai_disclaimer": false,
+      "internal_job_id": 4498419007,
+      "language": "en",
+      "location": {
+        "name": "Boston, Massachusetts, United States"
+      },
+      "metadata": [
+        {
+          "id": 20546174007,
+          "name": "Careers Page Tile",
+          "value": [
+            "Hardware"
+          ],
+          "value_type": "multi_select"
+        }
+      ],
+      "offices": [
+        {
+          "child_ids": [
+            4023685007,
+            4023686007,
+            4023004007,
+            4022994007,
+            4022993007,
+            4023000007,
+            4023008007,
+            4023009007,
+            4055330007,
+            4052306007,
+            4022995007
+          ],
+          "id": 4023007007,
+          "location": "Santa Clara, California, United States",
+          "name": "North America",
+          "parent_id": null
+        }
+      ],
+      "requisition_id": "20230917",
+      "title": "Design Verification Engineer, Intern   ",
+      "updated_at": "2026-08-26T15:55:19-04:00"
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/tenstorrentuniversity/jobs/4522665007",
+      "ai_disclaimer": null,
+      "ai_opt_out_request_url": "http://app7.greenhouse.io/ai_opt_out_request/job_post/4522665007/ai_opt_out",
+      "application_deadline": null,
+      "company_name": "Tenstorrent University Jobs",
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;Tenstorrent is leading the industry on cutting-edge AI technology, revolutionizing performance expectations, ease of use, and cost efficiency. With AI redefining the computing paradigm, solutions must evolve to unify innovations in software models, compilers, platforms, networking, and semiconductors. Our diverse team of technologists have developed a high performance RISC-V CPU from scratch, and share a passion for AI and a deep desire to build the best AI platform possible. We value collaboration, curiosity, and a commitment to solving hard",
+      "data_compliance": [
+        {
+          "demographic_data_consent_applies": false,
+          "requires_consent": false,
+          "requires_processing_consent": false,
+          "requires_retention_consent": false,
+          "retention_period": null,
+          "type": "gdpr"
+        }
+      ],
+      "departments": [
+        {
+          "child_ids": [],
+          "id": 4029766007,
+          "name": "University",
+          "parent_id": null
+        }
+      ],
+      "education": "education_required",
+      "first_published": "2024-09-20T12:14:48-04:00",
+      "id": 4522665007,
+      "include_ai_disclaimer": false,
+      "internal_job_id": 4322075007,
+      "language": "en",
+      "location": {
+        "name": "Santa Clara, California, United States"
+      },
+      "metadata": [
+        {
+          "id": 20546174007,
+          "name": "Careers Page Tile",
+          "value": null,
+          "value_type": "multi_select"
+        }
+      ],
+      "offices": [
+        {
+          "child_ids": [],
+          "id": 4022993007,
+          "location": "Austin, Texas, United States",
+          "name": "Austin",
+          "parent_id": 4023685007
+        },
+        {
+          "child_ids": [],
+          "id": 4022994007,
+          "location": "Santa Clara, California, United States",
+          "name": "Santa Clara",
+          "parent_id": 4023685007
+        }
+      ],
+      "requisition_id": "20230405",
+      "title": "Design Verification Software Intern",
+      "updated_at": "2026-08-26T15:55:19-04:00"
+    }
+  ],
+  "meta": {
+    "total": 4
+  }
+}

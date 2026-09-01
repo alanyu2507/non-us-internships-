@@ -1,0 +1,35 @@
+{
+  "jobPostings": [
+    {
+      "bulletFields": [
+        "R02438"
+      ],
+      "externalPath": "/job/Tokyo-Regus-Japan/Internal-Sales-Representative_R02438",
+      "locationsText": "Tokyo (Regus), Japan",
+      "postedOn": "Posted 30+ Days Ago",
+      "timeType": "Full time",
+      "title": "Internal Sales Representative"
+    },
+    {
+      "bulletFields": [
+        "R02998"
+      ],
+      "externalPath": "/job/Virtual---Los-Angeles-CA-90011/Sales-Account-Manager_R02998",
+      "locationsText": "Virtual - Los Angeles, CA 90011",
+      "postedOn": "Posted Today",
+      "timeType": "Full time",
+      "title": "Sales Account Manager"
+    },
+    {
+      "bulletFields": [
+        "R03062"
+      ],
+      "externalPath": "/job/San-Jose-California-United-States/Workday-Integrations-and-Reporting-Lead_R03062",
+      "locationsText": "San Jose, California, United States",
+      "postedOn": "Posted Today",
+      "timeType": "Full time",
+      "title": "Workday Integrations and Reporting Lead"
+    }
+  ],
+  "total": 3
+}

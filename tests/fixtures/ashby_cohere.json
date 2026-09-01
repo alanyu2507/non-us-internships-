@@ -1,0 +1,332 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "address": {
+        "postalAddress": {
+          "addressCountry": "Canada"
+        }
+      },
+      "applyUrl": "https://jobs.ashbyhq.com/cohere/8c035d3d-081d-4c8a-914a-72f4efaad254/application",
+      "department": "Internships",
+      "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Who are we?</strong></p><p style=\"min-height:1.5em\">Cohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.</p><p style=\"min-height:1.5em\">We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.</p><p style=\"min-height:1.5em\">We obsess over what we build. Each one of ",
+      "descriptionPlain": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.\n\nWe obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a",
+      "employmentType": "Intern",
+      "id": "8c035d3d-081d-4c8a-914a-72f4efaad254",
+      "isListed": true,
+      "isRemote": true,
+      "jobUrl": "https://jobs.ashbyhq.com/cohere/8c035d3d-081d-4c8a-914a-72f4efaad254",
+      "location": "Canada",
+      "publishedAt": "2026-05-01T20:20:40.899+00:00",
+      "secondaryLocations": [
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Arab Emirates",
+              "addressLocality": "Dubai"
+            }
+          },
+          "location": "Dubai"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom",
+              "addressLocality": "London",
+              "addressRegion": "London"
+            }
+          },
+          "location": "London"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "United States"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom"
+            }
+          },
+          "location": "United Kingdom"
+        }
+      ],
+      "team": "Internships",
+      "title": "Software Engineer Intern (Winter 2027)",
+      "workplaceType": "Remote"
+    },
+    {
+      "address": {
+        "postalAddress": {
+          "addressCountry": "Canada"
+        }
+      },
+      "applyUrl": "https://jobs.ashbyhq.com/cohere/73bd3e2b-6597-4124-b64b-1e5dbc32e785/application",
+      "department": "Internships",
+      "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Who are we?</strong></p><p style=\"min-height:1.5em\">Cohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.</p><p style=\"min-height:1.5em\">We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.</p><p style=\"min-height:1.5em\">We obsess over what we build. Each one of ",
+      "descriptionPlain": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.\n\nWe obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a",
+      "employmentType": "FullTime",
+      "id": "73bd3e2b-6597-4124-b64b-1e5dbc32e785",
+      "isListed": true,
+      "isRemote": true,
+      "jobUrl": "https://jobs.ashbyhq.com/cohere/73bd3e2b-6597-4124-b64b-1e5dbc32e785",
+      "location": "Canada",
+      "publishedAt": "2026-05-01T20:26:46.572+00:00",
+      "secondaryLocations": [
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "San Francisco"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "European Union"
+            }
+          },
+          "location": "Europe"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom",
+              "addressLocality": "London",
+              "addressRegion": "London"
+            }
+          },
+          "location": "London"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "United States"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom"
+            }
+          },
+          "location": "United Kingdom"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "Canada",
+              "addressLocality": "Toronto",
+              "addressRegion": "Ontario"
+            }
+          },
+          "location": "Toronto"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "Canada",
+              "addressLocality": "Montreal",
+              "addressRegion": "Quebec "
+            }
+          },
+          "location": "Montreal"
+        }
+      ],
+      "team": "Internships",
+      "title": "Research Internship (Winter 2027)",
+      "workplaceType": "Remote"
+    },
+    {
+      "address": {
+        "postalAddress": {
+          "addressCountry": "Canada"
+        }
+      },
+      "applyUrl": "https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b/application",
+      "department": "Internships",
+      "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Who are we?</strong></p><p style=\"min-height:1.5em\">Cohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.</p><p style=\"min-height:1.5em\">We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.</p><p style=\"min-height:1.5em\">We obsess over what we build. Each one of ",
+      "descriptionPlain": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.\n\nWe obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a",
+      "employmentType": "Intern",
+      "id": "36d1f52f-8270-4652-adf5-5303a0ff341b",
+      "isListed": true,
+      "isRemote": true,
+      "jobUrl": "https://jobs.ashbyhq.com/cohere/36d1f52f-8270-4652-adf5-5303a0ff341b",
+      "location": "Canada",
+      "publishedAt": "2026-05-13T17:16:14.014+00:00",
+      "secondaryLocations": [
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "European Union"
+            }
+          },
+          "location": "Europe"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "United States"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom"
+            }
+          },
+          "location": "United Kingdom"
+        }
+      ],
+      "team": "Internships",
+      "title": "Machine Learning Intern/Co-op  (Winter 2027)",
+      "workplaceType": "Remote"
+    },
+    {
+      "address": {
+        "postalAddress": {
+          "addressCountry": "United Kingdom",
+          "addressLocality": "London",
+          "addressRegion": "London"
+        }
+      },
+      "applyUrl": "https://jobs.ashbyhq.com/cohere/3136a5a5-06fd-4c82-8b72-a43467e6b128/application",
+      "department": "Modeling",
+      "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Who are we?</strong></p><p style=\"min-height:1.5em\">Cohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.</p><p style=\"min-height:1.5em\">We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.</p><p style=\"min-height:1.5em\">We obsess over what we build. Each one of ",
+      "descriptionPlain": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.\n\nWe obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a",
+      "employmentType": "FullTime",
+      "id": "3136a5a5-06fd-4c82-8b72-a43467e6b128",
+      "isListed": true,
+      "isRemote": true,
+      "jobUrl": "https://jobs.ashbyhq.com/cohere/3136a5a5-06fd-4c82-8b72-a43467e6b128",
+      "location": "London",
+      "publishedAt": "2024-11-01T16:06:43.318+00:00",
+      "secondaryLocations": [
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "San Francisco"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "New York",
+              "addressRegion": "New York"
+            }
+          },
+          "location": "New York"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "France",
+              "addressLocality": "Paris"
+            }
+          },
+          "location": "Paris"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "Canada",
+              "addressLocality": "Toronto",
+              "addressRegion": "Ontario"
+            }
+          },
+          "location": "Toronto"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "Canada",
+              "addressLocality": "Montreal",
+              "addressRegion": "Quebec "
+            }
+          },
+          "location": "Montreal"
+        }
+      ],
+      "team": "Modeling",
+      "title": "Member of Technical Staff, Modeling",
+      "workplaceType": "Remote"
+    },
+    {
+      "address": {
+        "postalAddress": {
+          "addressCountry": "United States",
+          "addressLocality": "New York",
+          "addressRegion": "New York"
+        }
+      },
+      "applyUrl": "https://jobs.ashbyhq.com/cohere/0183bddd-f845-4e7e-af69-e6178cdc32be/application",
+      "department": "People Operations",
+      "descriptionHtml": "<p style=\"min-height:1.5em\"><strong>Who are we?</strong></p><p style=\"min-height:1.5em\">Cohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.</p><p style=\"min-height:1.5em\">We’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.</p><p style=\"min-height:1.5em\">We obsess over what we build. Each one of ",
+      "descriptionPlain": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier models for enterprises who are building AI systems. We believe that our work is instrumental to the widespread adoption of AI and we are looking for folks that want to be part of that.\n\nWe obsess over what we build. Each one of us is responsible for contributing to increasing the capabilities of our models and the value they drive for our customers. Cohere is a",
+      "employmentType": "FullTime",
+      "id": "0183bddd-f845-4e7e-af69-e6178cdc32be",
+      "isListed": true,
+      "isRemote": true,
+      "jobUrl": "https://jobs.ashbyhq.com/cohere/0183bddd-f845-4e7e-af69-e6178cdc32be",
+      "location": "New York",
+      "publishedAt": "2026-08-20T19:06:15.198+00:00",
+      "secondaryLocations": [
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United Kingdom",
+              "addressLocality": "London",
+              "addressRegion": "London"
+            }
+          },
+          "location": "London"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "United States",
+              "addressLocality": "San Francisco",
+              "addressRegion": "California"
+            }
+          },
+          "location": "United States"
+        },
+        {
+          "address": {
+            "postalAddress": {
+              "addressCountry": "Canada",
+              "addressLocality": "Toronto",
+              "addressRegion": "Ontario"
+            }
+          },
+          "location": "Toronto"
+        }
+      ],
+      "team": "HR Business Partnership",
+      "title": "Senior HR Business Partner",
+      "workplaceType": "Remote"
+    }
+  ]
+}
