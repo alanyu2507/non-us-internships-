@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Offshore Bench</title>
+<meta name="description" content="42 EE, silicon and robotics internships for Summer 2027 in Canada, China and Hong Kong.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<style>
+:root{
+  --ground:#F2F4F0;
+  --surface:#FFFFFF;
+  --surface-2:#EAEEE9;
+  --line:#D5DCD5;
+  --line-soft:#E4E9E3;
+  --ink:#131A17;
+  --ink-2:#455049;
+  --ink-3:#6E7B73;
+  --accent:#0E6B4C;
+  --accent-soft:#DCEBE3;
+  --gold:#9A6C16;
+  --gold-soft:#F3E7CC;
+  --oxide:#A8391F;
+  --oxide-soft:#F6DED6;
+  --steel:#3D5F7A;
+  --steel-soft:#DEE7EE;
+  --shadow:0 1px 2px rgba(19,26,23,.06), 0 8px 24px -14px rgba(19,26,23,.28);
+  --radius:5px;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Archivo","IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1412;
+    --surface:#161D1A;
+    --surface-2:#1D2622;
+    --line:#2B3833;
+    --line-soft:#232E29;
+    --ink:#E7EDE8;
+    --ink-2:#A9B7AF;
+    --ink-3:#7E8D85;
+    --accent:#43BC8C;
+    --accent-soft:#123529;
+    --gold:#D9A343;
+    --gold-soft:#3A2E14;
+    --oxide:#E0785C;
+    --oxide-soft:#3B211A;
+    --steel:#82AECE;
+    --steel-soft:#1B2A34;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1412;
+  --surface:#161D1A;
+  --surface-2:#1D2622;
+  --line:#2B3833;
+  --line-soft:#232E29;
+  --ink:#E7EDE8;
+  --ink-2:#A9B7AF;
+  --ink-3:#7E8D85;
+  --accent:#43BC8C;
+  --accent-soft:#123529;
+  --gold:#D9A343;
+  --gold-soft:#3A2E14;
+  --oxide:#E0785C;
+  --oxide-soft:#3B211A;
+  --steel:#82AECE;
+  --steel-soft:#1B2A34;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -14px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px 96px}
+
+/* ---------- masthead ---------- */
+.mast{
+  padding:44px 0 26px;
+  border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end;justify-content:space-between;
+}
+.mast-id{max-width:620px}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 12px;display:flex;align-items:center;gap:9px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:block}
+h1{
+  font-family:var(--display);font-weight:700;font-size:clamp(30px,4.6vw,46px);
+  line-height:1.02;letter-spacing:-.022em;margin:0 0 14px;text-wrap:balance;
+}
+.dek{margin:0;color:var(--ink-2);font-size:16.5px;max-width:56ch}
+.dek b{color:var(--ink);font-weight:600}
+
+.counters{display:flex;gap:26px;flex-wrap:wrap}
+.counter{min-width:76px}
+.counter .n{
+  font-family:var(--display);font-weight:700;font-size:30px;line-height:1;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums;display:block;
+}
+.counter .l{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:6px;display:block;
+}
+.counter.hot .n{color:var(--oxide)}
+.counter.go .n{color:var(--accent)}
+
+/* ---------- urgent ---------- */
+.urgent{
+  margin-top:26px;background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--oxide);border-radius:var(--radius);padding:20px 22px;
+  display:grid;grid-template-columns:minmax(0,1fr);gap:16px;
+}
+@media(min-width:760px){.urgent{grid-template-columns:200px minmax(0,1fr)}}
+.urgent h2{
+  font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--oxide);margin:0;font-weight:600;
+}
+.urgent h2 small{display:block;color:var(--ink-3);letter-spacing:.06em;margin-top:6px;font-weight:400;text-transform:none;font-size:11.5px}
+.urgent ol{margin:0;padding-left:0;list-style:none;display:grid;gap:13px}
+.urgent li{display:flex;gap:12px;align-items:baseline;font-size:14.5px;color:var(--ink-2)}
+.urgent li .tick{
+  font-family:var(--mono);font-size:11px;color:var(--oxide);flex:0 0 auto;
+  padding-top:1px;font-variant-numeric:tabular-nums;
+}
+.urgent li b{color:var(--ink);font-weight:600}
+.urgent a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.urgent a:hover{border-bottom-color:var(--accent)}
+
+/* ---------- controls ---------- */
+.controls{
+  position:sticky;top:0;z-index:20;background:var(--ground);
+  padding:22px 0 14px;margin-top:38px;border-bottom:1px solid var(--line);
+}
+.ctl-row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.ctl-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ctl-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);margin-right:2px;
+}
+.chip{
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2);
+  background:transparent;border:1px solid var(--line);border-radius:100px;
+  padding:4px 12px;cursor:pointer;transition:background .12s,color .12s,border-color .12s;
+  line-height:1.5;
+}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.chip:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px;
+}
+.search{
+  font-family:var(--sans);font-size:13.5px;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);padding:6px 11px;min-width:190px;
+}
+.search::placeholder{color:var(--ink-3)}
+select.sort{
+  font-family:var(--sans);font-size:13.5px;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);padding:6px 9px;
+}
+.tally{
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em;
+  margin-left:auto;font-variant-numeric:tabular-nums;
+}
+.reset{
+  background:none;border:none;color:var(--ink-3);font-family:var(--mono);font-size:11px;
+  letter-spacing:.06em;cursor:pointer;text-decoration:underline;padding:0;
+}
+.reset:hover{color:var(--ink)}
+
+/* ---------- table ---------- */
+.tablehead{
+  display:none;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);padding:16px 14px 8px 17px;
+}
+@media(min-width:900px){
+  .tablehead{display:grid;grid-template-columns:minmax(0,1fr) 132px 148px 168px 62px;gap:16px;align-items:end}
+}
+.rows{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line-soft);background:transparent}
+.row[open]{background:var(--surface);box-shadow:var(--shadow)}
+.row>summary{
+  list-style:none;cursor:pointer;padding:13px 14px 13px 17px;position:relative;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;align-items:center;
+}
+.row>summary::-webkit-details-marker{display:none}
+.row>summary:hover{background:var(--surface-2)}
+.row[open]>summary:hover{background:transparent}
+.row>summary::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--stripe,transparent);
+}
+@media(min-width:900px){
+  .row>summary{grid-template-columns:minmax(0,1fr) 132px 148px 168px 62px;gap:16px}
+}
+.cell-name{min-width:0}
+.co{
+  font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:-.008em;
+  color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.role{color:var(--ink-2);font-size:13.5px;margin-top:2px}
+.flagdot{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:1px 6px;border-radius:3px;font-weight:600;
+}
+.flagdot.warn{background:var(--gold-soft);color:var(--gold)}
+.flagdot.stop{background:var(--oxide-soft);color:var(--oxide)}
+.cell-loc{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.cell-loc span{display:block;color:var(--ink-3);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.cell-track{font-size:12.5px;color:var(--ink-2)}
+.cell-when{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.status{
+  display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:3px;margin-bottom:4px;
+}
+.s-closing{background:var(--oxide-soft);color:var(--oxide)}
+.s-open{background:var(--accent-soft);color:var(--accent)}
+.s-soon{background:var(--gold-soft);color:var(--gold)}
+.s-watch{background:var(--steel-soft);color:var(--steel)}
+.s-blocked{background:var(--surface-2);color:var(--ink-3)}
+
+.meter{display:flex;gap:2px;align-items:center}
+.meter i{width:7px;height:13px;background:var(--line);border-radius:1px;display:block}
+.meter i.on{background:var(--accent)}
+.meter.low i.on{background:var(--ink-3)}
+
+.detail{
+  padding:2px 20px 22px 17px;display:grid;gap:14px;
+  border-top:1px dashed var(--line);margin:0 0 0 0;
+}
+@media(min-width:900px){.detail{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px 34px}}
+.notes{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.notes li{
+  font-size:13.8px;color:var(--ink-2);padding-left:16px;position:relative;line-height:1.5;
+}
+.notes li::before{
+  content:"";position:absolute;left:0;top:8px;width:6px;height:1px;background:var(--ink-3);
+}
+.notes li.flag{color:var(--ink)}
+.notes li.flag::before{background:var(--oxide);height:2px;top:8px}
+.aside{margin-top:14px;display:grid;gap:10px;align-content:start}
+.kv{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;font-size:13px}
+.kv dt{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding-top:3px}
+.kv dd{margin:0;color:var(--ink-2)}
+.apply{
+  display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+  color:var(--accent);text-decoration:none;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  border-radius:var(--radius);padding:7px 13px;width:fit-content;
+}
+.apply:hover{background:var(--accent-soft);border-color:var(--accent)}
+.apply::after{content:"→"}
+.empty{padding:44px 17px;color:var(--ink-3);font-size:14px}
+
+/* ---------- reference panels ---------- */
+.panels{display:grid;gap:22px;margin-top:56px}
+@media(min-width:900px){.panels{grid-template-columns:1fr 1fr}}
+.panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 26px;
+}
+.panel.wide{grid-column:1/-1}
+.panel h3{
+  font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.014em;margin:0 0 4px;
+}
+.panel .sub{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin:0 0 16px}
+.panel p{margin:0 0 12px;color:var(--ink-2);font-size:14.2px;max-width:64ch}
+.panel p:last-child{margin-bottom:0}
+.panel strong{color:var(--ink);font-weight:600}
+.rulelist{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.rulelist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;font-size:14px;color:var(--ink-2)}
+.rulelist .mark{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  padding:2px 7px;border-radius:3px;height:fit-content;white-space:nowrap;
+}
+.mark.no{background:var(--oxide-soft);color:var(--oxide)}
+.mark.yes{background:var(--accent-soft);color:var(--accent)}
+.mark.mid{background:var(--gold-soft);color:var(--gold)}
+.rulelist b{color:var(--ink);font-weight:600;display:block}
+
+.deadlist{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.deadlist li{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;
+  font-size:13.6px;color:var(--ink-3);padding-bottom:9px;border-bottom:1px solid var(--line-soft);
+}
+.deadlist li:last-child{border-bottom:none;padding-bottom:0}
+.deadlist b{color:var(--ink-2);font-weight:500}
+.deadlist .why{font-family:var(--mono);font-size:11px;text-align:right}
+
+.foot{
+  margin-top:52px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:12.6px;color:var(--ink-3);display:grid;gap:8px;
+}
+.foot a{color:var(--ink-3)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mast-id">
+      <p class="eyebrow">Summer 2027 · EE / robotics · outside the US</p>
+      <h1>Offshore Bench</h1>
+      <p class="dek">Forty-two internships and research placements in <b>Canada</b>, <b>mainland China</b> and <b>Hong Kong</b> — filtered for hardware, silicon, embedded and robotics work you'd actually want. Your Canadian passport is the sorting key: in Canada it removes competition, and in China it mostly closes doors.</p>
+    </div>
+    <div class="counters">
+      <div class="counter go"><span class="n" id="c-open">0</span><span class="l">live now</span></div>
+      <div class="counter hot"><span class="n" id="c-close">0</span><span class="l">closing</span></div>
+      <div class="counter"><span class="n" id="c-ca">0</span><span class="l">Canada</span></div>
+      <div class="counter"><span class="n" id="c-cn">0</span><span class="l">CN / HK</span></div>
+    </div>
+  </header>
+
+  <section class="urgent" aria-labelledby="urg-h">
+    <h2 id="urg-h">Do this month<small>Everything else opens Nov&nbsp;2026 – Feb&nbsp;2027.</small></h2>
+    <ol>
+      <li><span class="tick">SEP 25</span><span><b>Google Waterloo / Toronto, Summer 2027</b> is live and closes September 25. It's software, not hardware — but it's open to all academic years, pays CAD $99k annualized, and closes early if projects fill. <a href="https://www.google.com/about/careers/applications/jobs/results/123510626377966278-software-developer-intern/">Apply</a>.</span></li>
+      <li><span class="tick">SEP</span><span><b>Qualcomm Canada FY27 opens this month</b> — their own page says positions open in September and close April–May. Markham does real silicon. Filter hard for the <b>4-month</b> term; most Markham reqs are 16.</span></li>
+      <li><span class="tick">SEP</span><span>Set weekly alerts on <b>Tenstorrent University</b>, <b>Altera Toronto</b> (Workday), <b>Ciena Ottawa</b> and <b>Marvell Ottawa</b>. All four posted in a Sept–Nov window last cycle.</span></li>
+      <li><span class="tick">SEP</span><span>Email <b>AMD Canada</b> recruiting one question: is "enrolled in a Canadian University" enforced for a Canadian citizen studying in the US? Markham is the closest thing in Canada to what you've actually built, and this line is the only thing standing in front of it.</span></li>
+    </ol>
+  </section>
+
+  <div class="controls">
+    <div class="ctl-row">
+      <div class="ctl-group" id="f-region" role="group" aria-label="Filter by region">
+        <span class="ctl-label">Where</span>
+      </div>
+      <div class="ctl-group" id="f-track" role="group" aria-label="Filter by track">
+        <span class="ctl-label">Track</span>
+      </div>
+    </div>
+    <div class="ctl-row" style="margin-top:10px">
+      <div class="ctl-group" id="f-status" role="group" aria-label="Filter by status">
+        <span class="ctl-label">Status</span>
+      </div>
+      <div class="ctl-group">
+        <label class="ctl-label" for="q">Find</label>
+        <input class="search" id="q" type="search" placeholder="company, city, skill…" autocomplete="off">
+      </div>
+      <div class="ctl-group">
+        <label class="ctl-label" for="sort">Sort</label>
+        <select class="sort" id="sort">
+          <option value="urgency">By urgency</option>
+          <option value="fit">By fit to your stack</option>
+          <option value="company">By company</option>
+          <option value="region">By region</option>
+        </select>
+      </div>
+      <span class="tally"><span id="tally">43</span> shown · <button class="reset" id="reset" type="button">reset</button></span>
+    </div>
+  </div>
+
+  <div class="tablehead" aria-hidden="true">
+    <div>Company &amp; role</div><div>Where</div><div>Track</div><div>Window</div><div>Fit</div>
+  </div>
+  <div class="rows" id="rows"></div>
+  <p class="empty" id="empty" hidden>Nothing matches those filters.</p>
+
+  <div class="panels">
+
+    <section class="panel">
+      <h3>Two words that decide everything</h3>
+      <p class="sub">Read every Canadian posting for this</p>
+      <p>Canadian job ads carry two different requirements that look alike and aren't. <strong>"Authorized to work in Canada"</strong> is about your passport — you clear it, and it quietly removes every international student from the competition. <strong>"Enrolled in a Canadian university"</strong> is about your registrar, and it blocks you cold.</p>
+      <ul class="rulelist" style="margin-top:16px">
+        <li><span class="mark yes">clear</span><span><b>Tesla, Synopsys, Qualcomm, Rockwell, Google, Microsoft</b>Work-authorization language only. Rockwell's co-op posting is explicit: legal authorization required, no sponsorship offered.</span></li>
+        <li><span class="mark no">blocks</span><span><b>AMD Markham</b>Posting text reads "Enrolled in a Canadian University." Worth one recruiter email before you write it off — but don't build the plan around it.</span></li>
+        <li><span class="mark no">blocks</span><span><b>Vector Institute, NSERC USRA, U of T ESROP</b>All reserved for students registered at Canadian institutions. Not a citizenship test — an enrollment one.</span></li>
+        <li><span class="mark no">blocks</span><span><b>Mitacs Globalink, Fulbright–Mitacs</b>Both exist to bring <em>foreign</em> students into Canada. Fulbright's version requires US citizenship outright.</span></li>
+        <li><span class="mark mid">watch</span><span><b>Term length</b>Canadian co-op runs 4, 8, 12 or 16 months. Michigan gives you 12–14 weeks. Filter for the 4-month variant and say your window up front.</span></li>
+        <li><span class="mark mid">watch</span><span><b>WaterlooWorks is shut to you</b>It's a closed portal for UW students, and a large share of Canadian co-op supply never leaves it. Everything you apply to has to come off a public careers board.</span></li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h3>The China problem, stated plainly</h3>
+      <p class="sub">Legal, but narrow</p>
+      <p>There is exactly one lawful route for you: an <strong>S2 visa carrying an 实习 ("internship") annotation</strong>, capped at 180 days, filed by the host company. Beijing's Zhongguancun program and Shanghai's S2 guidance both cover students enrolled at overseas universities listed on China's MOE registry — Michigan qualifies, and so do the China entities of Fortune Global 500 firms like Microsoft, Apple and Intel.</p>
+      <ul class="rulelist" style="margin:16px 0">
+        <li><span class="mark no">closed</span><span><b>Z visa / work permit</b>Tier B needs a bachelor's plus two years' experience. A sophomore has neither.</span></li>
+        <li><span class="mark no">closed</span><span><b>Category C youth internship permit</b>The one permit built for foreign interns runs on bilateral agreements — France, Germany, Singapore. Canada isn't on the list.</span></li>
+        <li><span class="mark mid">2029</span><span><b>K visa</b>Genuinely liberal, no employer needed — but requires a <em>completed</em> STEM bachelor's. File this away for after you graduate.</span></li>
+        <li><span class="mark no">illegal</span><span><b>Interning on a tourist or business visa</b>¥5,000–20,000 fines, 5–15 days detention, deportation with a ten-year re-entry ban. Someone will suggest it. Don't.</span></li>
+      </ul>
+      <p>The visa isn't even the hardest part. <strong>Duration minimums and graduation-year windows kill more applications than immigration does</strong> — Qualcomm China wants six months, AMD China runs July–December at 3–5 days a week, and most 暑期实习 programs target the cohort graduating next year, not 2029. Apply where the channel is English and global (Apple, NVIDIA, MSRA), and raise the visa in the first recruiter call, not after an offer.</p>
+    </section>
+
+    <section class="panel wide">
+      <h3>Deliberately not on this list</h3>
+      <p class="sub">Verified dead ends, so you don't spend a Saturday on them</p>
+      <ul class="deadlist">
+        <li><b>Untether AI (Toronto)</b><span class="why">wound down 2025 · team acqui-hired by AMD Markham</span></li>
+        <li><b>Microsoft Research Montréal</b><span class="why">"undergraduates are not eligible"</span></li>
+        <li><b>Mila (Montréal)</b><span class="why">graduate registration required</span></li>
+        <li><b>Figure AI · Physical Intelligence · Skild · Agility · Zoox · Waymo</b><span class="why">US-only engineering</span></li>
+        <li><b>SpaceX · Anduril · Astranis</b><span class="why">US-only <em>and</em> ITAR — blocked twice over</span></li>
+        <li><b>Attabotics (Calgary)</b><span class="why">bankrupt 2025 · relaunched small as LaFayette Systems</span></li>
+        <li><b>Apple Ottawa</b><span class="why">three postings total, zero internships</span></li>
+        <li><b>Texas Instruments Canada · Micron Canada · Applied Materials Canada</b><span class="why">no Canadian engineering site</span></li>
+      </ul>
+      <p style="margin-top:18px">Two adjacent things worth naming. <strong>Nokia Ottawa and Ericsson Ottawa</strong> are among the strongest hardware co-op employers in Canada and are excluded here only because they're Finnish and Swedish — if the real constraint is "must be in Canada" rather than "must be American," they outrank half the Tier-2 list. And <strong>Huawei Canada's Markham lab is posting a "Co-op Researcher, Physical AI"</strong> role that is a near-perfect topical match for you — but Huawei sits under US sanctions, and that line on a résumé can complicate future clearance or export-controlled work at exactly the American robotics companies you're aiming at. Make that a decision, not an accident.</p>
+    </section>
+
+    <section class="panel wide">
+      <h3>The gap in your stack</h3>
+      <p class="sub">One thing to fix before December</p>
+      <p>Verilog, FreeRTOS, PCB and controls make you strong at Tenstorrent, AMD, Altera, Ciena, Kepler, MDA, Xanadu and Sanctuary. But nearly every Canadian <em>robotics</em> co-op posting — Rockwell/Clearpath, OTTO, Waabi, Avidbots — asks for <strong>ROS 2, C++, Python, Linux and Docker</strong>. Putting ROS 2 on the hexapod between now and December widens the funnel by roughly a third of this list, and it's the cheapest thing on your schedule.</p>
+      <p>Second move, higher leverage than any single application: Canadian professors can hire you onto grant money with zero immigration paperwork, and you cost them nothing an international student would. Cold-email robotics faculty at <strong>U of T, Waterloo, UBC, McGill and Sherbrooke</strong> in October–December with the hexapod, the FPGA work and the PCBs attached. Hardware depth is rarer than ML coursework in that inbox.</p>
+    </section>
+
+  </div>
+
+  <p class="foot">
+    <span>Compiled 1 September 2026. Application windows for Summer 2027 largely open November 2026 – February 2027; dates shown for windows that haven't opened are last cycle's, used as a forecast and labelled as such. Verify every posting before relying on it.</span>
+    <span>Sources include company careers boards (Google, Qualcomm, Tenstorrent, AMD, Altera, Ciena, Marvell, Synopsys, Tesla, Rockwell, Kepler, MDA, Sanctuary, Waabi, Xanadu, Apple, Intel China, NVIDIA), Microsoft Research and MSRA program pages, Vector / Mila / Mitacs eligibility pages, HKUST / HKU / CUHK summer research programs, and Beijing and Shanghai municipal visa guidance.</span>
+  </p>
+</div>
+
+<script>
+const DATA = [
+/* ---------------- CANADA · silicon & FPGA ---------------- */
+{co:"Tenstorrent",role:"RTL Design Intern · CPU/AI Hardware",org:"Startup",region:"Canada",city:"Toronto, ON",track:"Silicon & FPGA",fit:5,status:"watch",when:"Rolling · check monthly",sort:2,
+ url:"https://tenstorrent.com/en/university",
+ notes:["Jim Keller's RISC-V and AI-accelerator company. Toronto is a first-class engineering site: PCB layout, SoC design verification, CPU microarchitecture, firmware, systems debug — not a satellite office.",
+  "Intern families on the university board include RTL Design, Design Verification (RISC-V CPU), Physical Design, ML for Physical Design and Chiplet Security Research.",
+  "flag|Many Toronto intern reqs are tagged PEY — U of T's 12–16 month placement. You can't do those. Watch for the non-PEY summer variants, and apply to the US hardware reqs too if you ever regain US work authorization.",
+  "Postings appear on a rolling basis; Toronto reqs with October 2026 starts were live during research, so Summer 2027 should surface between now and February."],
+ pay:"—", term:"4 months (non-PEY)"},
+
+{co:"AMD",role:"Hardware / Silicon Design Intern & Co-op",org:"Big tech",region:"Canada",city:"Markham, ON",track:"Silicon & FPGA",fit:5,status:"soon",when:"Opens ~Oct–Dec 2026",sort:4,flag:"eligibility",
+ url:"https://careers.amd.com/students/jobs",
+ notes:["The old ATI campus, and one of the largest silicon design centres in Canada — RTL, design verification, SystemVerilog/UVM, power, FPGA. It absorbed Untether AI's engineering team in 2025, so the depth there just went up.",
+  "flag|An official Markham DV intern posting states: \"Enrolled in a Canadian University in Electrical Engineering, Computer Science, or a related field.\" Work authorization is listed separately (citizen / PR / student visa), so you clear that half and fail this one.",
+  "This is the single highest-value question on your whole list. Ask a recruiter directly whether the enrollment line is enforced for a Canadian citizen at a US school — it may be boilerplate.",
+  "Biggest intern class of any hardware employer on this list, which also makes it the most forgiving of an unconventional profile."],
+ pay:"—", term:"4 / 8 / 12 / 16 months"},
+
+{co:"Altera",role:"FPGA Design Intern",org:"Big tech",region:"Canada",city:"Toronto, ON",track:"Silicon & FPGA",fit:5,status:"soon",when:"Window Sept–Nov",sort:3,
+ url:"https://altera.wd1.myworkdayjobs.com/en-US/Altera",
+ notes:["Spun out of Intel, now majority Silver Lake, still US-headquartered. Toronto office at 151 Bloor St W works on next-generation Ethernet IP — full lifecycle from spec through implementation, verification and release, plus FPGA-based hardware validation.",
+  "Required quals read like your résumé: digital design in Verilog/VHDL with related flows, C/C++, Python and TCL scripting.",
+  "Last cycle's Toronto FPGA Design Intern posting came down 13 November 2025, implying a Sept–Nov posting window. Set a Workday alert now.",
+  "No Canadian-university restriction appeared in the posting text. Related reqs: FPGA Hardware Design Intern, FPGA ML Overlay Engineering Intern."],
+ pay:"—", term:"4 months"},
+
+{co:"Qualcomm",role:"Edge AI & Display HW Architecture Intern",org:"Big tech",region:"Canada",city:"Markham, ON",track:"Silicon & FPGA",fit:4,status:"open",when:"Opens Sept · closes Apr–May",sort:1,flag:"term",
+ url:"https://www.qualcomm.com/company/careers/internships-and-early-in-career-opportunities/americas",
+ notes:["Markham is a genuine silicon and systems site. Live FY26 reqs included Edge AI and Display Hardware Architecture, Software Validation, ML Compiler & Performance, and a standing Systems intern role.",
+  "Qualcomm's own Americas page states the cycle: positions open in September, close April–May. That means FY27 opens this month.",
+  "flag|Canadian terms are 4, 8, 12 or 16 months and most live Markham reqs are 16-month. You need the 4-month variant; it's the difference between a viable application and a wasted one.",
+  "Eligibility is generous otherwise: enrolled in a bachelor's with at least one term remaining after the internship. No Canadian-university requirement on the official program page."],
+ pay:"—", term:"4 months — insist on it"},
+
+{co:"Synopsys",role:"Digital Verification Intern · R&D Verification Co-op",org:"Big tech",region:"Canada",city:"Mississauga · Ottawa · Waterloo, ON",track:"Silicon & FPGA",fit:4,status:"soon",when:"Postings Nov 2026 – Mar 2027",sort:6,
+ url:"https://careers.synopsys.com/early-careers",
+ notes:["EDA and silicon IP. Canadian work is digital verification and high-speed SERDES design — system models, test cases, model components, automation flows.",
+  "Skills named in the posting: SystemVerilog, UVM, Verilog for RTL, C++, Python, Perl, Linux, Matlab/Simulink, high-speed and mixed-signal design.",
+  "Work authorization language is the good kind: \"Canadian Citizen, Canadian Permanent Resident, or Canadian Student Visa holder.\" You clear it.",
+  "flag|One Mississauga req specified penultimate year, which makes you early as a sophomore. Other reqs differ — read each one rather than assuming."],
+ pay:"—", term:"4 months"},
+
+{co:"Ciena",role:"Hardware Design Co-op",org:"Big tech",region:"Canada",city:"Ottawa, ON",track:"Hardware & PCB",fit:5,status:"soon",when:"Posts ~1–2 terms ahead",sort:7,
+ url:"https://careers.ciena.com",
+ notes:["American (HQ Hanover, Maryland) with one of the largest optical-networking R&D campuses in Canada. Ottawa job families include Hardware Design, Electro-optics, Power Hardware and Photonic Hardware engineers.",
+  "The parallel hardware intern description is almost a checklist of your work: strong digital and analog circuit knowledge, embedded microcontrollers, CPLDs and FPGAs, PCB schematic capture and layout, prototype bring-up, scope and network-analyzer debug.",
+  "Established co-op stream with named-term postings (\"Hardware Design Co-Op, January 2025\"), so watch for the Summer 2027 title specifically.",
+  "Requirement is only enrollment in a BS or MS in electrical/electronics engineering. No Canadian-university restriction seen."],
+ pay:"—", term:"4 months"},
+
+{co:"Marvell",role:"Firmware Engineering Intern",org:"Big tech",region:"Canada",city:"Ottawa, ON",track:"Embedded & Firmware",fit:4,status:"soon",when:"Expect Nov 2026 – Feb 2027",sort:8,
+ url:"https://marvell.wd1.myworkdayjobs.com/MarvellCareers",
+ notes:["Canadian teams work on cloud, 5G and automotive silicon — software, digital, analog and mixed-signal IC design, hardware and customer enablement. Added 120+ Canadian staff in 2022.",
+  "A Summer 2026 Ottawa firmware intern req existed (Workday 2502464), so a Summer 2027 equivalent is likely. Maps straight onto your FreeRTOS work.",
+  "University partnerships with U of T, Carleton and Waterloo are advertised, but no stated restriction to Canadian-university students. Unverified either way.",
+  "Applications go through Marvell's Workday only — filter Country = Canada, Worker Subtype = Intern."],
+ pay:"—", term:"4 months"},
+
+{co:"Cisco",role:"Hardware Engineer (Intern), Canada",org:"Big tech",region:"Canada",city:"Ottawa, ON",track:"Hardware & PCB",fit:3,status:"watch",when:"FY27 reqs ~late 2026",sort:12,
+ url:"https://jobs.cisco.com/jobs/SearchJobs",
+ notes:["Large Ottawa R&D site with optical and routing lineage, plus an announced partnership with the University of Ottawa.",
+  "Notable because Cisco posts a Canada-wide <em>hardware</em> intern requisition alongside the usual software one — rare among the big-tech Canadian sites.",
+  "flag|Posting body couldn't be read during research: the Ottawa location on the hardware req and its eligibility text are both unverified. Treat this as a lead to chase, not a confirmed opening."],
+ pay:"—", term:"unknown"},
+
+/* ---------------- CANADA · robotics & controls ---------------- */
+{co:"Sanctuary AI",role:"Intern, Firmware Engineering",org:"Startup",region:"Canada",city:"Vancouver, BC",track:"Embedded & Firmware",fit:5,status:"watch",when:"Multiple intakes per year",sort:5,
+ url:"https://sanctuary.ai/careers/",
+ notes:["General-purpose humanoids with dexterous hands, developed and tested in-house in Vancouver. The closest thing Canada has to the Figure AI / 1X world you're aiming at.",
+  "The intern JD is a line-by-line match: C/C++ embedded, ARM microcontrollers, <b>RTOS development</b>, low-level drivers, I2C/SPI/CAN/EtherCAT, HIL test infrastructure, scopes and logic analyzers, Linux, Git. Bachelor's-level in EE/CE/mechatronics.",
+  "A January 2026 term was posted, so they run several intakes a year rather than a single summer cycle — check more often than quarterly.",
+  "flag|Sudden CEO departure and staff reductions in late 2024, and a narrowing from general humanoids toward industrial automation. Sanity-check recent news before you build a summer around them."],
+ pay:"—", term:"flexible"},
+
+{co:"Rockwell Automation",role:"Robotics Integration & Development Co-op (Clearpath / OTTO)",org:"Big tech",region:"Canada",city:"Kitchener–Waterloo, ON",track:"Robotics & Autonomy",fit:4,status:"soon",when:"Expect Dec 2026 – Feb 2027",sort:9,
+ url:"https://www.rockwellautomation.com/en-ca/careers/edge-student-early-career.html",
+ notes:["Clearpath Robotics (Husky, Jackal) and OTTO Motors, acquired by Rockwell in 2023 and now its robotics Centre of Excellence. American parent, Canadian site — exactly your filter.",
+  "Verified eligibility language: \"Legal authorization to work in Canada is required. We will not sponsor individuals for employment visas.\" That sentence is working in your favour.",
+  "flag|Co-op reqs skew robotics software — Python, C++, ROS 2, Linux, Docker — over pure EE. Your FreeRTOS and hexapod work maps well; the Verilog doesn't. This is the strongest argument for adding ROS 2 this fall.",
+  "Fall 2026 postings went up around June 2026, so Summer 2027 should land roughly December–February. Reqs appear on Rockwell's Workday and the Communitech board."],
+ pay:"~USD $20–32/hr", term:"4 months"},
+
+{co:"Tesla",role:"Internship, Automation Controls Engineer · Cell Engineering",org:"Big tech",region:"Canada",city:"Markham, ON",track:"Controls & Power",fit:4,status:"soon",when:"Last cycle closed Nov 30",sort:10,
+ url:"https://www.tesla.com/en_ca/careers",
+ notes:["Real engineering site from the Hibar acquisition: battery cell manufacturing automation. PLC programming and debug, industrial control systems, HMI and servo drives, electrical panel layout to NFPA79/NEC/UL508A, safety systems, CAD.",
+  "Posting asks for coursework in analog and digital circuits, control systems, logic and programming, plus microcontroller exposure — you have all of it.",
+  "Eligibility is stated as Canadian citizen, PR or student visa. <b>No Canadian-university requirement.</b> Minimum 12 weeks, full-time on site — compatible with a US summer.",
+  "flag|Degree field is listed as mechanical/mechatronic \"or related,\" so lead your application with the controls and mechatronics overlap rather than the silicon work."],
+ pay:"—", term:"12+ weeks"},
+
+{co:"Waabi",role:"Systems Engineer Internship / Co-op",org:"Startup",region:"Canada",city:"Toronto, ON",track:"Robotics & Autonomy",fit:4,status:"open",when:"Live — Summer reqs recur",sort:2,
+ url:"https://jobs.lever.co/waabi",
+ notes:["Raquel Urtasun's autonomous trucking company, Toronto HQ. Perception, prediction, motion planning, controls, simulation, mapping — heavy sim-to-real, which is adjacent to the embodied-AI direction you're interested in.",
+  "Posting explicitly says \"Bachelor's, Master's, or PhD students.\" That sentence is rare and it's why this ranks above better-known labs.",
+  "Pays CAD $45–60/hr in Canada. Wants Python and/or C++, linear algebra, calculus, probability, and demonstrated project or research work — the hexapod is the right thing to lead with.",
+  "flag|Their electrical and firmware org is in Pittsburgh, not Toronto. The Systems Engineer internship is the Toronto-eligible role closest to hardware."],
+ pay:"CAD $45–60/hr", term:"4 months"},
+
+/* ---------------- CANADA · space & RF ---------------- */
+{co:"Kepler Communications",role:"Hardware / Hardware Test / RF Engineering Intern",org:"Startup",region:"Canada",city:"Toronto, ON",track:"Space & RF",fit:5,status:"soon",when:"Watch Nov 2026 – Jan 2027",sort:9,
+ url:"https://jobs.lever.co/kepler",
+ notes:["LEO satellite data-relay network, with real satellite hardware built in Toronto. Small enough that an intern touches flight hardware.",
+  "Confirmed EE intern families: Hardware Engineering, Hardware Test Engineering, RF/Antenna Engineering, Manufacturing Engineering.",
+  "Terms of 4–8 and 8–16 months have both been posted; aim at the 4-month. The company notes many interns return for second and third terms and convert to full-time.",
+  "Applications run through Lever, not the marketing site — bookmark the board directly."],
+ pay:"—", term:"4–8 months"},
+
+{co:"MDA Space",role:"Engineering Student, Electrical",org:"Big tech",region:"Canada",city:"Brampton, ON · Ste-Anne-de-Bellevue, QC",track:"Space & RF",fit:5,status:"soon",when:"Summer reqs post Nov–Jan",sort:9,
+ url:"https://mda.space/en/careers",
+ notes:["Canadarm, satellite systems, the Chorus Earth-observation constellation. The biggest Canadian space prime, and the electrical student role is a named, recurring req.",
+  "flag|This is the one place on the list where your Canadian citizenship is an <b>advantage rather than a neutral</b>: MDA works under Canada's Controlled Goods Program and on defence programs, where citizenship is screened for.",
+  "Student terms of 4, 8, 12 or 16 months. Companion roles in mechanical, systems design and software.",
+  "Postings also syndicate to spacecrew.com if the main careers site is hard to filter."],
+ pay:"—", term:"4 months"},
+
+{co:"Ross Video",role:"FPGA / Hardware Co-op",org:"Startup",region:"Canada",city:"Ottawa · Iroquois, ON",track:"Silicon & FPGA",fit:4,status:"watch",when:"Verify directly",sort:13,
+ url:"https://www.rossvideo.com/careers/",
+ notes:["Live-production video hardware — switchers, robotic camera systems, LED processing. Genuinely FPGA-heavy and high-speed digital, and almost nobody in your cohort applies there.",
+  "Under-the-radar but a real FPGA employer, in active growth per Invest Ottawa. Runs co-ops.",
+  "flag|Company, locations and hiring activity confirmed; a live student posting page with terms and dates was not. Email them rather than waiting for a req."],
+ pay:"—", term:"4 months"},
+
+/* ---------------- CANADA · deep tech ---------------- */
+{co:"Xanadu",role:"Residency Program (16-week paid)",org:"Startup",region:"Canada",city:"Toronto, ON",track:"Research",fit:4,status:"soon",when:"Applications open winter",sort:11,
+ url:"https://xanadu.ai/residency",
+ notes:["Photonic quantum computing, with heavy FPGA and control-electronics work underneath the optics.",
+  "A formal 16-week paid summer residency <b>explicitly open to undergraduates</b> in physics, CS and engineering — unusually accessible for a sophomore, and rare on this list.",
+  "flag|The residency skews research and software; a dedicated hardware/FPGA track wasn't confirmed. Ask before assuming.",
+  "Their general job board runs through a separate portal that may need a real browser session."],
+ pay:"paid", term:"16 weeks"},
+
+{co:"General Fusion",role:"Engineering Co-op",org:"Startup",region:"Canada",city:"Richmond, BC",track:"Controls & Power",fit:3,status:"watch",when:"Confirm program is funded",sort:14,
+ url:"https://generalfusion.com/careers/",
+ notes:["Magnetized target fusion. Arguably the heaviest power-electronics, pulsed-power, plasma-diagnostics and controls content on this entire list.",
+  "States an award-winning co-op and internship program run with several universities; applications route through an ADP portal linked from the careers page.",
+  "flag|Laid off staff in 2025 citing \"unexpected and urgent financing constraints,\" then raised a US$22M bridge and later a reported ~$51M round. Alive but fragile — confirm the co-op program is running before investing effort."],
+ pay:"—", term:"4 months"},
+
+{co:"Photonic Inc.",role:"Hardware Engineer (cold apply)",org:"Startup",region:"Canada",city:"Vancouver / Coquitlam, BC",track:"Hardware & PCB",fit:3,status:"watch",when:"No intern program found",sort:16,
+ url:"https://careers.photonic.com",
+ notes:["Silicon-spin and photonic quantum computing. Open Hardware Engineer and Quantum Hardware Engineer roles confirmed in BC.",
+  "flag|No intern or co-op program verified. This is cold-email territory — which, given how few sophomores do it, is not a bad thing."],
+ pay:"—", term:"—"},
+
+{co:"RANOVUS",role:"Silicon photonics (cold apply)",org:"Startup",region:"Canada",city:"Ottawa, ON",track:"Hardware & PCB",fit:2,status:"watch",when:"No program found",sort:17,
+ url:"https://techjobfinder.investottawa.ca/companies/ranovus",
+ notes:["Co-packaged optics for AI datacenters — technically an excellent fit for high-speed digital and FPGA interests.",
+  "flag|No intern or co-op program found. Listed on the Invest Ottawa board. Cold apply only."],
+ pay:"—", term:"—"},
+
+{co:"Avidbots",role:"Embedded / EE Co-op",org:"Startup",region:"Canada",city:"Kitchener, ON",track:"Robotics & Autonomy",fit:2,status:"watch",when:"Unverified",sort:18,
+ url:"https://www.avidbots.com/careers",
+ notes:["Neo autonomous floor scrubbers. Real EE and embedded work, geographically convenient to the Waterloo cluster.",
+  "flag|No verified current EE co-op posting found. Check their careers page directly."],
+ pay:"—", term:"—"},
+
+/* ---------------- CANADA · research labs ---------------- */
+{co:"Huawei Canada",role:"Co-op Researcher · Physical AI",org:"Research lab",region:"Canada",city:"Markham, ON",track:"Research",fit:4,status:"open",when:"Rolling — board refreshes",sort:2,flag:"risk",
+ url:"https://huaweicanada.recruitee.com/",
+ notes:["Noah's Ark Lab / Canada Research Centre. The live \"Co-op Researcher — Physical AI\" posting in Markham is the single best topical match to embodied AI found anywhere in this search.",
+  "\"Co-op Researcher\" and \"Intern Engineer\" are Canadian co-op titles; sibling postings labelled \"PhD Intern\" confirm by contrast that these aren't grad-gated. Ottawa also has genuine hardware work on hollow-core fiber transmission.",
+  "flag|Huawei is a Chinese company under US sanctions. Working there is entirely legal for you in Canada, but it can complicate future US security clearance and some export-controlled roles — including at the American robotics companies you've named as targets. Decide deliberately.",
+  "Board is rolling and refreshes continuously. Check monthly."],
+ pay:"—", term:"4 months"},
+
+{co:"NVIDIA",role:"Toronto AI Lab · Canadian intern reqs",org:"Research lab",region:"Canada",city:"Toronto, ON",track:"Research",fit:3,status:"watch",when:"Reqs open Sept–Nov",sort:12,
+ url:"https://jobs.nvidia.com/careers",
+ notes:["flag|Important correction to a common assumption: <b>NVIDIA Toronto is an AI research lab</b> (nv-tlabs) working on 3D generative modelling, neural rendering and simulation — it is not a hardware or silicon site. Historical Toronto intern reqs were performance engineering, not hardware.",
+  "NVIDIA's 2027 Hardware Engineering internship is real and open on a rolling basis, but is USD-denominated with no Canadian locations listed — i.e. US roles you can't take.",
+  "NVIDIA Research itself states it seeks \"outstanding graduate students,\" though the corporate Autonomous Vehicles and Robotics internship accepts BS students.",
+  "Worth an alert on jobs.nvidia.com filtered to Canada, but don't build the plan around it."],
+ pay:"—", term:"12+ weeks"},
+
+{co:"LG Toronto AI Lab",role:"Research internship (undergrad path unverified)",org:"Research lab",region:"Canada",city:"Toronto, ON",track:"Research",fit:3,status:"watch",when:"Unverified",sort:15,
+ url:"https://www.lg.com/global/careers",
+ notes:["Established through a five-year research partnership with U of T, since renewed. Currently advertising a Senior Physical AI Research Scientist and an Agentic AI Researcher in Toronto — so the site is actively doing physical AI.",
+  "Korean parent, Canadian entity, so no work-authorization issue for you.",
+  "flag|Undergraduate internship pathway at the Toronto site is unverified. Worth a direct enquiry given how well the topic matches."],
+ pay:"—", term:"—"},
+
+{co:"RBC Borealis",role:"ML Research Internship",org:"Research lab",region:"Canada",city:"Toronto · Montréal · Waterloo",track:"Research",fit:2,status:"soon",when:"Opens ~Nov 2026",sort:15,
+ url:"https://rbcborealis.com/internships/",
+ notes:["Postings open roughly six months before the term, so Summer 2027 reqs should appear around November 2026. Paid, 4-month terms.",
+  "flag|Effectively graduate-level: undergraduates may apply only if pursuing a graduate degree, and they prefer prior top-tier AI publications.",
+  "Their genuinely undergrad-open offering, Let's SOLVE It, is an unpaid mentorship program that requires enrollment at a Canadian university — closed to you."],
+ pay:"paid", term:"4 months"},
+
+{co:"Samsung AI Center Toronto",role:"Research internship",org:"Research lab",region:"Canada",city:"Toronto, ON",track:"Research",fit:2,status:"watch",when:"MScAC-routed",sort:16,
+ url:"https://job-boards.greenhouse.io/saictoronto",
+ notes:["Active lab at MaRS, next to U of T. Research focus is computer vision, image processing and colour science — <b>not robotics</b>, so the name promises more than the fit delivers.",
+  "flag|Its visible research-internship pipeline runs through U of T's MScAC master's program. Samsung Research America's separate intern postings are US-based."],
+ pay:"—", term:"—"},
+
+{co:"Cohere",role:"ML / SWE Intern & Co-op",org:"Startup",region:"Canada",city:"Toronto, ON",track:"Software fallback",fit:2,status:"soon",when:"Summer reqs ~Nov–Feb",sort:15,
+ url:"https://jobs.ashbyhq.com/cohere/",
+ notes:["Currently posting Winter 2027 ML and SWE co-ops, which means Summer 2027 reqs should follow around November 2026 – February 2027.",
+  "LLM-focused rather than robotics, so a low topical fit — but a strong Canadian name that genuinely hires undergrad co-ops."],
+ pay:"—", term:"4 months"},
+
+/* ---------------- CANADA · software fallbacks ---------------- */
+{co:"Google",role:"Software Developer Intern, BS, Summer 2027",org:"Big tech",region:"Canada",city:"Waterloo · Toronto, ON",track:"Software fallback",fit:3,status:"closing",when:"Closes 25 Sept 2026",sort:0,
+ url:"https://www.google.com/about/careers/applications/jobs/results/123510626377966278-software-developer-intern/",
+ notes:["Live right now with a hard date on it. 12–14 weeks, CAD $99,000 annualized.",
+  "Explicitly \"intended for students in all academic years\" — a rare posting where being a sophomore isn't a filter.",
+  "Requirement is that you be located in Canada for the internship duration, which your citizenship makes trivial. Needs two general-purpose languages plus data structures and algorithms.",
+  "flag|Software, not hardware — none of your Verilog, PCB or FreeRTOS work is used. Apply anyway: it's the highest-probability strong-brand offer available to you this month, and the window may close before the 25th if projects fill."],
+ pay:"CAD $99k annualized", term:"12–14 weeks"},
+
+{co:"Microsoft",role:"Software Engineering Intern",org:"Big tech",region:"Canada",city:"Vancouver, BC · Toronto, ON",track:"Software fallback",fit:2,status:"soon",when:"Opens fall 2026",sort:13,
+ url:"https://careers.microsoft.com/students",
+ notes:["Software sites; no EE or hardware role family identified in Canada.",
+  "Eligibility is clean for you: full-time enrollment, returning to school for at least one full academic term afterwards, no classes during the internship, no consecutive internship periods. <b>No Canadian-university requirement.</b>",
+  "A fallback, not a target."],
+ pay:"—", term:"12 weeks"},
+
+{co:"Amazon / AWS",role:"SDE Internship, Canada",org:"Big tech",region:"Canada",city:"Toronto, ON · Vancouver, BC",track:"Software fallback",fit:2,status:"soon",when:"Opens fall 2026",sort:14,
+ url:"https://amazon.jobs/en/teams/internships-for-students",
+ notes:["Canadian sites are software/SDE. AWS custom-silicon work (Annapurna Labs) is in the US and Israel, not Canada.",
+  "flag|No Canadian hardware intern posting found. Fallback only."],
+ pay:"—", term:"12–16 weeks"},
+
+/* ---------------- CHINA ---------------- */
+{co:"Apple",role:"System EE · EE/HW Intern",org:"Big tech",region:"China",city:"Shanghai · Shenzhen · Suzhou",track:"Hardware & PCB",fit:5,status:"watch",when:"Rolling on global portal",sort:6,flag:"visa",
+ url:"https://jobs.apple.com/en-us/search?location=china-CHNC&team=%E5%AE%9E%E4%B9%A0%E7%94%9F-STDNT-INTRN",
+ notes:["Genuine hardware engineering, not manufacturing liaison. Live intern reqs across all three cities include System EE–EE/HW Intern, Audio Product Design, Mac Product Design, Input Device Product Design and Core OS.",
+  "<b>The decisive advantage: Apple posts these in English on its global careers portal</b>, not a Chinese-ID-gated platform. Roughly ten intern reqs in Shanghai, four in Shenzhen, one in Suzhou. Listed at 40 hours a week — full-time, Western-shaped.",
+  "One req is framed as a general \"Intern Opportunities at Apple, October 2026 to September 2027,\" which is the one to watch.",
+  "flag|The visa is the whole problem. Raise the S2 internship annotation in your first recruiter conversation, with the Beijing and Shanghai government links in hand — most China HR staff will reflexively say \"we can't hire foreigners\" because they're thinking of work permits, which is a different thing."],
+ pay:"—", term:"full-time"},
+
+{co:"NVIDIA China",role:"Board-level HW design · chip verification · embodied AI",org:"Big tech",region:"China",city:"Shanghai · Beijing · Shenzhen",track:"Silicon & FPGA",fit:5,status:"watch",when:"暑期实习 posts Feb–Apr",sort:8,flag:"visa",
+ url:"https://jobs.nvidia.com/careers",
+ notes:["Large and growing China R&D org — a new Shanghai R&D centre was reported in 2025, and as of July 2026 NVIDIA was actively expanding robotics hiring in Beijing, Shanghai and Shenzhen across embodied AI, simulation, deployment and solutions architecture.",
+  "Campus role families include 板级硬件设计 (board-level hardware design), 芯片设计, 物理设计, 版图设计 and 芯片验证 — the best pure hardware match in the China section.",
+  "Internships are offered year-round with a 12-week minimum, which fits a US summer exactly.",
+  "flag|Much of NVIDIA China's intern funnel runs through WeChat and MokaHR. <b>Apply through the global jobs.nvidia.com portal filtered to China locations</b> — it sidesteps the Chinese-ID question entirely."],
+ pay:"—", term:"12+ weeks"},
+
+{co:"Microsoft Research Asia",role:"Stars of Tomorrow (明日之星) internship",org:"Research lab",region:"China",city:"Beijing · Shanghai",track:"Research",fit:4,status:"open",when:"Rolling, posted per group",sort:3,
+ url:"https://www.microsoft.com/en-us/research/academic-program/microsoft-research-asia-stars-of-tomorrow-internship-program/",
+ notes:["<b>The single most open door in the China section.</b> The program states it takes outstanding students from top universities worldwide and has hosted students from 300+ universities across more than 20 countries — Stanford, MIT, CMU among them.",
+  "That track record matters more than any posting text: if MSRA has done this hundreds of times, their HR already knows the S2 route. Roughly 400 internships a year.",
+  "Relevant groups for you: System Intelligence, Intelligent Cloud and Edge, Media Computing. Apply via aka.ms/InternApplication and email msraih@microsoft.com directly with the visa question.",
+  "flag|Research-heavy and CS/AI-weighted; you'd be competing largely against PhD students. A stretch as a sophomore — but the eligibility door is genuinely open, which almost nothing else here can claim."],
+ pay:"—", term:"varies"},
+
+{co:"Intel China",role:"Embodied AI robotics · platform validation intern",org:"Big tech",region:"China",city:"Shanghai · Beijing",track:"Embedded & Firmware",fit:4,status:"open",when:"Rolling — 招满即止",sort:5,flag:"class-year",
+ url:"https://chinacampus.jobs.intel.cn/intel/position/index?recruitmentType=INTERNSHIPRECRUITMENT",
+ notes:["Intel Asia-Pacific R&D in Shanghai. Verified intern role families include AI compiler and library engineering, PyTorch framework development, system software, <b>embodied AI robotics</b> and platform validation.",
+  "The posting explicitly targets students from 海内外 institutions — domestic <em>and</em> overseas. That acknowledgement is rare and worth a lot.",
+  "Runs on a 网申即日起开启，招满即止 basis: open now, closes when filled. Apply early rather than waiting for a cycle.",
+  "flag|The current posting targets the 2026 and 2027 graduating cohorts. As a 2029 grad you need the later-cohort version — worth asking whether earlier-year students are considered."],
+ pay:"—", term:"varies"},
+
+{co:"Tesla China",role:"Intern, Shanghai",org:"Big tech",region:"China",city:"Shanghai",track:"Controls & Power",fit:3,status:"watch",when:"Year-round intake",sort:12,flag:"class-year",
+ url:"https://www.tesla.cn/careers/intern-resources",
+ notes:["Gigafactory Shanghai plus a Shanghai R&D and design centre — manufacturing, controls, powertrain and vehicle electronics.",
+  "Recruits interns year-round rather than in a fixed cycle, with a three-month minimum for Greater China. A US summer fits.",
+  "flag|Tesla China states it most commonly recruits final-year students or recent graduates. As a sophomore you're well outside that. Nationality and work-authorization requirements aren't stated on the page."],
+ pay:"—", term:"3 months min"},
+
+{co:"Honeywell China",role:"航电及导航软件开发实习生 (avionics / FMS test)",org:"Big tech",region:"China",city:"Shanghai · Beijing · Suzhou",track:"Embedded & Firmware",fit:3,status:"soon",when:"Applies Mar–Apr 2027",sort:11,flag:"channel",
+ url:"https://www.honeywell.com.cn/careers",
+ notes:["Genuinely EE-adjacent intern roles: avionics and navigation software development, and flight management system test. Safety-critical embedded work, which lines up with your firmware background.",
+  "2026 cycle ran applications March–April, interviews March–May, offers May–June. Expect the same shape in 2027.",
+  "As a Fortune Global 500 company, Honeywell's China entity qualifies as an eligible S2 inviter under Beijing's rules — a real advantage if you get that far.",
+  "flag|Applications submit through a WeChat QR code / 阅读原文 flow, which is a hard barrier without an established WeChat presence."],
+ pay:"—", term:"varies"},
+
+{co:"Qualcomm China",role:"IC design & hardware intern",org:"Big tech",region:"China",city:"Beijing · Shanghai · Shenzhen · Chengdu · Xi'an",track:"Silicon & FPGA",fit:2,status:"blocked",when:"Mar–Jun window",sort:19,flag:"6-month min",
+ url:"https://www.nowcoder.com/careers/qualcommchina/170559",
+ notes:["Modem and SoC design across five cities, with six role families including IC design and hardware. The 2026 window ran 9 March – 30 June.",
+  "The class-year rule is the most permissive found anywhere in China: undergraduates graduating October 2026 or later, which you satisfy comfortably.",
+  "flag|<b>Minimum internship duration is six months.</b> A US academic calendar can't deliver that without a leave term — though if you ever took one, this plus the 180-day S2 cap would line up neatly.",
+  "Applications route through Nowcoder (牛客), a Chinese platform."],
+ pay:"—", term:"6 months min"},
+
+{co:"AMD China",role:"芯片验证 / 数字后端 intern",org:"Big tech",region:"China",city:"Shanghai · Beijing",track:"Silicon & FPGA",fit:2,status:"blocked",when:"Jul–Dec term",sort:20,flag:"term shape",
+ url:"https://www.amd.com/en/corporate/careers.html",
+ notes:["Chip verification and digital backend design — strong Verilog matches on paper.",
+  "flag|The verified cycle runs July–December at 3–5 days a week: a term-time part-time model, not a summer block. Structurally incompatible with a US calendar, and the window targets 2027 grads.",
+  "Applications go through BOSS直聘 and a WeChat official account."],
+ pay:"—", term:"Jul–Dec, part-time"},
+
+{co:"Texas Instruments China",role:"Equipment / Process Technician Intern",org:"Big tech",region:"China",city:"Chengdu · Shanghai",track:"Hardware & PCB",fit:1,status:"blocked",when:"Posts Apr, closes Jun",sort:21,
+ url:"https://www.ti.com.cn/general/cn/docs/gencontent.tsp?contentId=68343",
+ notes:["The 2026 summer program was genuinely summer-shaped — posted 17 April, closed 17 June, ran July–August with no shift rotation. Rare in China.",
+  "flag|But the roles are fab equipment and process technician work in a cleanroom, with an education floor of 大专 (associate degree). Not a use of a Verilog and FPGA skillset. TI's analog design for China is done in the US and India.",
+  "Targeted the 2027届 cohort. Listed for completeness, not as a recommendation."],
+ pay:"—", term:"Jul–Aug"},
+
+/* ---------------- HONG KONG ---------------- */
+{co:"HKUST",role:"Summer UG Research Program · Robotics Institute",org:"Program",region:"Hong Kong",city:"Clear Water Bay, HK",track:"Research",fit:4,status:"soon",when:"Apply via UMich nomination",sort:10,flag:"you pay",
+ url:"https://summercampus.hkust.edu.hk/hkust-summer-ug-research-program",
+ notes:["The Cheng Kar-Shun Robotics Institute is a genuine powerhouse and is currently recruiting faculty specifically in <b>embodied AI</b> and medical robotics. Topically this is the bullseye of your whole search.",
+  "Eight weeks, mid-June to early August, three credits with an HKUST transcript, on-campus shared housing. Hong Kong is far more accessible to a Canadian passport than the mainland — English-medium and straightforward entry.",
+  "flag|<b>You pay:</b> HKD 14,500 program fee plus HKD 18,600 tuition — tuition waived only if your home institution nominates you as an exchange student. So the move is to go through Michigan's study-abroad office, not to apply as a fee-paying independent.",
+  "Year-of-study eligibility, partner requirements and the 2027 deadline weren't published. Contact HKUST directly, and separately cold-email Robotics Institute PIs — HK labs routinely host self-arranged visiting undergrads outside any program."],
+ pay:"you pay", term:"8 weeks"},
+
+{co:"HKU",role:"Summer Research Programme",org:"Program",region:"Hong Kong",city:"Hong Kong",track:"Research",fit:3,status:"blocked",when:"Target Summer 2028",sort:22,flag:"one year early",
+ url:"https://gradsch.hku.hk/",
+ notes:["The best-funded option anywhere on this list: HK$10,000 completion scholarship, up to HK$5,000 airfare, up to HK$5,000 accommodation, plus visa sponsorship for non-local students. Ten weeks, one-to-one mentorship with a professor.",
+  "flag|Requires Year 3–4 standing and CGPA ≥ 3.6. Applying in January 2027 you'd be finishing Year 2 — <b>one year early.</b>",
+  "Diarize it for January 2028 instead. The 2026 window ran 9 January – 9 February; assume the same shape."],
+ pay:"HK$10k + travel + housing", term:"10 weeks"},
+
+{co:"CUHK",role:"Summer Undergraduate Research Programme (SURP)",org:"Program",region:"Hong Kong",city:"Hong Kong",track:"Research",fit:3,status:"watch",when:"2027 dates unposted",sort:16,
+ url:"https://www.summer.cuhk.edu.hk/surp/",
+ notes:["Eight weeks (2026 ran 21 June – 15 August), up to 180 international students, 160+ research topics, three CUHK credits.",
+  "flag|Eligibility says \"senior undergraduate students from overseas, non-Chinese universities.\" As a rising junior you're borderline. Fee information isn't published.",
+  "2027 dates and deadline weren't posted as of September 2026."],
+ pay:"unpublished", term:"8 weeks"},
+
+{co:"DJI",role:"Engineering intern (English portal)",org:"Startup",region:"China",city:"Shenzhen",track:"Hardware & PCB",fit:3,status:"watch",when:"Campus cycle, domestic-first",sort:18,flag:"1260H risk",
+ url:"https://we.dji.com/jobs_en.html",
+ notes:["Drones, gimbals, LiDAR and motor control — the best EE technical content of any Chinese robotics company, and the only one in that group with a real English application channel.",
+  "flag|No evidence of a foreign-undergraduate intern pipeline; campus recruiting is Chinese-university focused.",
+  "flag|DJI has faced US Entity List and related designations. Given that your stated targets are American robotics companies, an internship at a designated Chinese hardware firm carries real downstream cost for clearance and export-controlled roles. Same caveat applies to Unitree, UBTECH, AgiBot, Galbot, Horizon Robotics and Black Sesame — all domestic-hiring only in any case."],
+ pay:"—", term:"varies"}
+];
+
+const REGIONS = ["Canada","China","Hong Kong"];
+const TRACKS = ["Silicon & FPGA","Embedded & Firmware","Hardware & PCB","Robotics & Autonomy","Controls & Power","Space & RF","Research","Software fallback"];
+const STATUSES = [["closing","Closing"],["open","Live"],["soon","Opens later"],["watch","Watch / verify"],["blocked","Blocked"]];
+const STATUS_LABEL = {closing:"Closing",open:"Live",soon:"Opens later",watch:"Watch",blocked:"Blocked"};
+const STRIPE = {closing:"var(--oxide)",open:"var(--accent)",soon:"var(--gold)",watch:"var(--steel)",blocked:"var(--line)"};
+
+const state = {region:new Set(), track:new Set(), status:new Set(), q:"", sort:"urgency"};
+
+function chip(label, value, group){
+  const b=document.createElement("button");
+  b.type="button"; b.className="chip"; b.textContent=label;
+  b.setAttribute("aria-pressed","false");
+  b.addEventListener("click",()=>{
+    const s=state[group];
+    if(s.has(value)){s.delete(value); b.setAttribute("aria-pressed","false");}
+    else {s.add(value); b.setAttribute("aria-pressed","true");}
+    render();
+  });
+  return b;
+}
+REGIONS.forEach(r=>document.getElementById("f-region").appendChild(chip(r,r,"region")));
+TRACKS.forEach(t=>document.getElementById("f-track").appendChild(chip(t,t,"track")));
+STATUSES.forEach(([v,l])=>document.getElementById("f-status").appendChild(chip(l,v,"status")));
+
+function meter(n){
+  let h='<span class="meter'+(n<=2?" low":"")+'" role="img" aria-label="fit '+n+' of 5">';
+  for(let i=1;i<=5;i++) h+='<i class="'+(i<=n?"on":"")+'"></i>';
+  return h+"</span>";
+}
+function esc(s){return String(s).replace(/&(?!#?\w+;)/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+function noteHTML(n){
+  const isFlag = n.startsWith("flag|");
+  const body = isFlag ? n.slice(5) : n;
+  return '<li class="'+(isFlag?"flag":"")+'">'+body+'</li>';
+}
+
+function card(d){
+  const det=document.createElement("details");
+  det.className="row";
+  det.style.setProperty("--stripe",STRIPE[d.status]);
+  const flag = d.flag ? '<span class="flagdot '+(d.status==="blocked"?"stop":"warn")+'">'+esc(d.flag)+'</span>' : "";
+  det.innerHTML =
+    '<summary>'+
+      '<div class="cell-name"><div class="co">'+esc(d.co)+flag+'</div><div class="role">'+esc(d.role)+'</div></div>'+
+      '<div class="cell-loc">'+esc(d.city)+'<span>'+esc(d.region)+'</span></div>'+
+      '<div class="cell-track">'+esc(d.track)+'</div>'+
+      '<div class="cell-when"><span class="status s-'+d.status+'">'+STATUS_LABEL[d.status]+'</span><br>'+esc(d.when)+'</div>'+
+      '<div>'+meter(d.fit)+'</div>'+
+    '</summary>'+
+    '<div class="detail">'+
+      '<div><ul class="notes">'+d.notes.map(noteHTML).join("")+'</ul></div>'+
+      '<div class="aside">'+
+        '<dl class="kv">'+
+          '<dt>Type</dt><dd>'+esc(d.org)+'</dd>'+
+          '<dt>Term</dt><dd>'+esc(d.term)+'</dd>'+
+          '<dt>Pay</dt><dd>'+esc(d.pay)+'</dd>'+
+        '</dl>'+
+        '<a class="apply" href="'+d.url+'" target="_blank" rel="noopener">Careers board</a>'+
+      '</div>'+
+    '</div>';
+  return det;
+}
+
+function render(){
+  const q=state.q.trim().toLowerCase();
+  let list=DATA.filter(d=>{
+    if(state.region.size && !state.region.has(d.region)) return false;
+    if(state.track.size && !state.track.has(d.track)) return false;
+    if(state.status.size && !state.status.has(d.status)) return false;
+    if(q){
+      const hay=(d.co+" "+d.role+" "+d.city+" "+d.track+" "+d.org+" "+d.notes.join(" ")).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  const cmp={
+    urgency:(a,b)=>a.sort-b.sort || b.fit-a.fit || a.co.localeCompare(b.co),
+    fit:(a,b)=>b.fit-a.fit || a.sort-b.sort || a.co.localeCompare(b.co),
+    company:(a,b)=>a.co.localeCompare(b.co),
+    region:(a,b)=>a.region.localeCompare(b.region) || a.sort-b.sort || a.co.localeCompare(b.co)
+  }[state.sort];
+  list.sort(cmp);
+  const rows=document.getElementById("rows");
+  rows.replaceChildren(...list.map(card));
+  document.getElementById("tally").textContent=list.length;
+  document.getElementById("empty").hidden = list.length>0;
+}
+
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;render()});
+document.getElementById("sort").addEventListener("change",e=>{state.sort=e.target.value;render()});
+document.getElementById("reset").addEventListener("click",()=>{
+  state.region.clear();state.track.clear();state.status.clear();state.q="";state.sort="urgency";
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));
+  document.getElementById("q").value="";document.getElementById("sort").value="urgency";
+  render();
+});
+
+document.getElementById("c-open").textContent=DATA.filter(d=>d.status==="open").length;
+document.getElementById("c-close").textContent=DATA.filter(d=>d.status==="closing").length;
+document.getElementById("c-ca").textContent=DATA.filter(d=>d.region==="Canada").length;
+document.getElementById("c-cn").textContent=DATA.filter(d=>d.region!=="Canada").length;
+render();
+</script>
+</body>
+</html>
