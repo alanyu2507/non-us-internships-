@@ -1,297 +1,292 @@
 {
   "analog-devices:R266614": {
     "first_seen": "2026-09-24",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "ciena:R030893": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "ciena:R031481": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "ciena:R031571": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
-  },
-  "ciena:R031750": {
-    "first_seen": "2026-09-23",
-    "last_seen": "2026-10-07",
-    "misses": 2
   },
   "ciena:R031783": {
     "first_seen": "2026-09-29",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "cohere:8c035d3d-081d-4c8a-914a-72f4efaad254": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2124110": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2128378": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2333594": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2538056": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2551510": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2592939": {
     "first_seen": "2026-09-01",
     "last_seen": "2026-10-09",
-    "misses": 0
+    "misses": 1
   },
   "huawei-canada:2596601": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2597935": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2597975": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2625614": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2630780": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2639233": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2644919": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2672934": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2683637": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2697330": {
     "first_seen": "2026-09-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "huawei-canada:2715933": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287516": {
     "first_seen": "2026-10-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287535": {
     "first_seen": "2026-10-02",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287536": {
     "first_seen": "2026-10-08",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287539": {
     "first_seen": "2026-10-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287915": {
     "first_seen": "2026-10-09",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "intel:JR0287928": {
     "first_seen": "2026-10-09",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "kepler:2ad02ce3-1d56-4aee-9f1d-5199c780c0c1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2502424-1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2502426-1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2502430-1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2502469-1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2603751": {
     "first_seen": "2026-09-23",
     "last_seen": "2026-10-09",
-    "misses": 0
+    "misses": 1
   },
   "marvell:2603755": {
     "first_seen": "2026-09-29",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2603862": {
     "first_seen": "2026-09-25",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2604525": {
     "first_seen": "2026-09-25",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2604738": {
     "first_seen": "2026-10-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "marvell:2604959": {
     "first_seen": "2026-10-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2023690": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2023914": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2023920-1": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2024486": {
     "first_seen": "2026-09-03",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2024692": {
     "first_seen": "2026-09-16",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2024860": {
     "first_seen": "2026-09-05",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2024861": {
     "first_seen": "2026-09-05",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2025052": {
     "first_seen": "2026-09-05",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2025055-1": {
     "first_seen": "2026-09-12",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2025425": {
     "first_seen": "2026-09-15",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2025542": {
     "first_seen": "2026-09-16",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2026170": {
     "first_seen": "2026-09-23",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "nvidia:JR2026567": {
     "first_seen": "2026-10-06",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "tenstorrent-university:5256568007": {
     "first_seen": "2026-10-06",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "tenstorrent-university:5256579007": {
     "first_seen": "2026-10-06",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "tenstorrent-university:5259347007": {
     "first_seen": "2026-10-08",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "waabi:0fd4e30b-9bd1-4b53-9043-6088457363cb": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   },
   "waabi:62700386-b9db-4c78-aec3-5ef59cbe841e": {
     "first_seen": "2026-09-01",
-    "last_seen": "2026-10-09",
+    "last_seen": "2026-10-10",
     "misses": 0
   }
 }
