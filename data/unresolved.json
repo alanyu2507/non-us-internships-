@@ -72,10 +72,10 @@
     "title": "Physical Design Engineer Intern, MS - Summer 2027"
   },
   {
-    "id": "marvell:2604579",
-    "location_raw": "VN - Da Nang",
+    "id": "marvell:2604525",
+    "location_raw": "2 Locations",
     "source": "workday",
-    "title": "Analog Design Intern"
+    "title": "Data Center Silicon Hardware Engineering Intern - BS - 2027 Co-Op"
   },
   {
     "id": "marvell:2604735-1",
@@ -94,5 +94,11 @@
     "location_raw": "2 Locations",
     "source": "workday",
     "title": "Physical Design Intern, VLSI - 2027"
+  },
+  {
+    "id": "nvidia:JR2026170",
+    "location_raw": "2 Locations",
+    "source": "workday",
+    "title": "AI Computing Software Intern, GPU Kernel Libraries - 2027"
   }
 ]
